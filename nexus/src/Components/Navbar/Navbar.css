@@ -1,0 +1,44 @@
+.navbar{
+  width: 70%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 30px;
+  position: fixed;
+  border-radius: 100px;
+  left: 200px;
+  top: 30px;
+  background: rgba(101, 225, 101, 0.5);
+  box-shadow: 0 0 10px rgb(0, 0 , 0, 0.5);
+  z-index: 1000;
+}
+.nav-signun{
+  width: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 150px;
+}
+.nav ul{
+  display: flex;
+  gap: 45px;
+}
+.nav li{
+  list-style: none;
+  font-size: 14.5px;
+  color: rgb(57, 56, 56);
+  padding: 1.5px 0;
+  cursor: pointer;
+}
+.active{
+  border-bottom: 1px solid rgb(52, 215, 52);
+}
+.signup-btn{
+  padding: 7px 20px;
+  border-radius: 5px;
+  border: none;
+  background: rgb(52, 215, 52);
+  box-shadow: 0 0 5px rgb(0, 0, 0, 0.5);
+  color: white;
+}
