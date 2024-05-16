@@ -1,21 +1,27 @@
-import React, { useState} from 'react'
+import React from 'react'
 import './App.css'
-import { Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Navbar from './Components/Navbar/Navbar'
-import Footer from './Components/Footer/Footer'
 import Home from './Pages/Home/Home'
-import Cart from './Pages/Cart/Cart'
+import Footer from './Components/Footer/Footer'
+import StoreContextProvider from './Context/StoreContext'
+
 
 const App = () => {
-  const [menu, setMenu] = useState('home')
+
   return (
-    <div className='main'>
-      <Navbar menu={menu} setMenu={setMenu} />
-      <Routes>
-        <Route path='/' element={<Home />}/>
-        <Route path='/cart' element={<Cart />}/>
-      </Routes>
-      <Footer />
+    <div className='main' id='main'>
+      <div>
+        <StoreContextProvider>
+          <BrowserRouter>
+            <Navbar />
+            <Routes>
+              <Route path='/' element={<Home/>} />
+            </Routes>
+            <Footer />
+          </BrowserRouter>
+        </StoreContextProvider>
+      </div>
     </div>
   )
 }

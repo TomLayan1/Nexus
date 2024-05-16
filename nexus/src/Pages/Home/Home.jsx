@@ -1,9 +1,15 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import './Home.css'
+import Category from '../../Components/Category/Category'
+import ProductDisplay from '../../Components/ProductDisplay/ProductDisplay'
 
 const Home = () => {
   return (
-    <div></div>
+    <div className='home' id='home'>
+      <Category />
+      <hr/>
+      <ProductDisplay />
+    </div>
   )
 }
 
