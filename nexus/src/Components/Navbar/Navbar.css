@@ -1,31 +1,73 @@
 .navbar{
   width: 100%;
-  height: 140px;
+  height: 120px;
   position: fixed;
   z-index: 1000;
 }
 .logo--bx{
   width: 100%;
-  height: 55%;
+  height: 60%;
   background: #FFFFFF;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   padding: 20px 30px;
-}
-.hamburger-x, .hamburger-bar{
-  visibility: hidden;
-  margin-right: 565px;
+  position: relative;
 }
 .logo{
   text-align: center;
-  color: #C2272D;
+  color: #d40000;
   cursor: pointer;
-  margin-right: 150px;
 }
-.signup--btn{
+.n--span{
+  background: #d40000;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 50%;
+}
+.search--bx{
+  width: 400px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+}
+.search{
+  width: 80%;
+  height: 30px;
+  border: 1px solid black;
+  border-right: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding: 5px;
+  color: #161616;
+}
+.search-btn{
+  background: #d40000;
+  height: 100%;
+  width: 20%;
+  border: 1px solid #d40000;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  color: white;
+  font-weight: bold;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.search-icon{
+  width: 17px;
+}
+.search-signup--bx {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.signup--btn {
   width: 90px;
   height: 30px;
-  background: #C2272D;
+  background: #d40000;
   border: none;
   border-radius: 5px;
   color: #FFFFFF;
@@ -33,50 +75,40 @@
   font-weight: bold;
   cursor: pointer;
 }
-.n--span{
-  background: #C2272D;
-  color: white;
-  padding: 5px 10px;
-  border-radius: 50%;
-}
-.search-signup--bx{
-  display: flex;
-  align-items: center;
-  gap: 40px;
-}
-.search--bx{
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 0 10px 0 0;
-  border-radius: 5px;
-  border: 1px solid #000000;
-}
-.search{
-  width: 200px;
-  height: 30px;
-  border-radius: inherit;
-  border: none;
-  padding: 5px;
-  color: #161616;
-}
-.search-icon{
-  width: 17px;
-}
 .nav--bx{
   width: 100%;
   height: 45%;
-  background: #C2272D;
+  background: #fe8c00;
   border: none;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 0 50px;
+  position: relative;
+}
+.hamburger-social--bx{
+  width: 20%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-right: 230px;
+}
+.hamburger-x, .hamburger-bar {
+  /* display: none; */
+  margin-right: 30px;
+}
+.social--bx{
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 3px;
 }
 nav{
   height: 100%;
   display: flex;
   align-items: center;
+  margin-right: auto;
 }
 nav div{
   display: flex;
@@ -85,6 +117,7 @@ nav div{
   padding: 0 20px;
   font-size: 14px;
   color: white;
+  font-weight: bold;
   height: 100%;
   cursor: pointer;
 }
@@ -109,4 +142,43 @@ nav div{
 }
 .current--menu{
   background-color: black;
+}
+
+
+/* tablet */
+@media (max-width: 884px) {
+.hamburger-social--bx {
+    margin-right: 120px;
+  }
+}
+
+@media (max-width: 430px) {
+  .logo--bx {
+    padding: 20px 10px;
+  }
+  .search--bx {
+    display: none;
+  }
+  .search-signup--bx {
+    gap: 10px;
+  }
+  .signup--btn {
+    width: 70px;
+    font-size: 13px;
+  }
+  .nav--bx {
+    justify-content: space-between;
+    padding: 0 20px;
+    border-bottom: 1px solid black;
+  }
+  nav{
+    width: 100%;
+    height: 300px;
+    background-color: #fe8c00;
+    position: absolute;
+    flex-direction: column;
+    top: 53px;
+    left: 0;
+    z-index: 100;
+  }
 }

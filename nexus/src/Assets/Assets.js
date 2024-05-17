@@ -74,39 +74,39 @@ export const assets = {
 
 export const categoryData = [
   {
-    image: categoryImage,
-    name: 'Category name'
+    image: six_piece_white_dinner_plate_set,
+    name: 'All'
   },
   {
-    image: categoryImage,
-    name: 'Category name'
+    image: men_slim_fit_summer_shorts_gray,
+    name: 'Men wears'
   },
   {
-    image: categoryImage,
-    name: 'Category name'
+    image: women_stretch_popover_hoodie_black,
+    name: 'Women wears'
   },
   {
-    image: categoryImage,
-    name: 'Category name'
+    image: men_athletic_shoes_green,
+    name: 'Foot wears'
   },
   {
-    image: categoryImage,
-    name: 'Category name'
+    image: women_chiffon_beachwear_coverup_black,
+    name: 'Beddings'
   },
   {
-    image: categoryImage,
-    name: 'Category name'
+    image: women_stretch_popover_hoodie_black,
+    name: 'Kitchen'
   },
   {
-    image: categoryImage,
-    name: 'Category name'
+    image: women_chiffon_beachwear_coverup_black,
+    name: 'Tissues'
   },
   {
-    image: categoryImage,
-    name: 'Category name'
+    image: vanity_mirror_silver,
+    name: 'Accessories'
   },
   {
-    image: categoryImage,
+    image: men_slim_fit_summer_shorts_gray,
     name: 'Category name'
   }
 ]
@@ -119,7 +119,7 @@ export const productsData = [
     image: athletic_cotton_socks_six_pairs,
     name: "Black and Gray Athletic Cotton Socks - 6 Pairs",
     rating: {
-      stars: 4.5,
+      stars: rating_45,
       count: 87
     },
     priceCents: 1090,
@@ -134,7 +134,7 @@ export const productsData = [
     image: intermediate_composite_basketball,
     name: "Intermediate Size Basketball",
     rating: {
-      stars: 4,
+      stars: rating_40,
       count: 127
     },
     priceCents: 2095,
@@ -148,7 +148,7 @@ export const productsData = [
     image: adults_plain_cotton_tshirt_two_pack_teal,
     name: "Adults Plain Cotton T-Shirt - 2 Pack",
     rating: {
-      stars: 4.5,
+      stars: rating_45,
       count: 56
     },
     priceCents: 799,
@@ -165,7 +165,7 @@ export const productsData = [
     image: black_two_slot_toaster,
     name: "2 Slot Toaster - Black",
     rating: {
-      stars: 5,
+      stars: rating_50,
       count: 2197
     },
     priceCents: 1899,
@@ -180,7 +180,7 @@ export const productsData = [
     image: six_piece_white_dinner_plate_set,
     name: "6 Piece White Dinner Plate Set",
     rating: {
-      stars: 4,
+      stars: rating_40,
       count: 37
     },
     priceCents: 2067,
@@ -195,7 +195,7 @@ export const productsData = [
     image: plain_hooded_fleece_sweatshirt_yellow,
     name: "Plain Hooded Fleece Sweatshirt",
     rating: {
-      stars: 4.5,
+      stars: rating_45,
       count: 317
     },
     priceCents: 2400,
@@ -210,7 +210,7 @@ export const productsData = [
     image: luxury_tower_set_six_piece,
     name: "Luxury Towel Set - Graphite Gray",
     rating: {
-      stars: 4.5,
+      stars: rating_45,
       count: 144
     },
     priceCents: 3599,
@@ -227,7 +227,7 @@ export const productsData = [
     image: liquid_laundry_detergent_plain,
     name: "Liquid Laundry Detergent, 110 Loads, 82.5 Fl Oz",
     rating: {
-      stars: 4.5,
+      stars: rating_45,
       count: 305
     },
     priceCents: 2899,
@@ -241,7 +241,7 @@ export const productsData = [
     image: knit_athletic_sneakers_gray,
     name: "Waterproof Knit Athletic Sneakers - Gray",
     rating: {
-      stars: 4,
+      stars: rating_40,
       count: 89
     },
     priceCents: 3390,
@@ -256,7 +256,7 @@ export const productsData = [
     image: women_chiffon_beachwear_coverup_black,
     name: "Women's Chiffon Beachwear Cover Up - Black",
     rating: {
-      stars: 4.5,
+      stars: rating_45,
       count: 235
     },
     priceCents: 2070,
@@ -275,7 +275,7 @@ export const productsData = [
     image: round_sunglasses_black,
     name: "Round Sunglasses",
     rating: {
-      stars: 4.5,
+      stars: rating_45,
       count: 30
     },
     priceCents: 1560,
@@ -289,7 +289,7 @@ export const productsData = [
     image: beach_sandals_women,
     name: "Women's Two Strap Buckle Sandals - Tan",
     rating: {
-      stars: 4.5,
+      stars: rating_45,
       count: 562
     },
     priceCents: 2499,
@@ -306,7 +306,7 @@ export const productsData = [
     image: men_slim_fit_summer_shorts_gray,
     name: "Men's Slim-Fit Summer Shorts",
     rating: {
-      stars: 4,
+      stars: rating_40,
       count: 160
     },
     priceCents: 1699,
@@ -321,7 +321,7 @@ export const productsData = [
     image: facial_tissue_two_ply_eighteen_boxes,
     name: "Ultra Soft Tissue 2-Ply - 18 Box",
     rating: {
-      stars: 4,
+      stars: rating_40,
       count: 99
     },
     priceCents: 2374,
@@ -338,7 +338,7 @@ export const productsData = [
     image:  women_stretch_popover_hoodie_black,
     name: "Women's Stretch Popover Hoodie",
     rating: {
-      stars: 4.5,
+      stars: rating_45,
       count: 2465
     },
     priceCents: 1374,
@@ -357,7 +357,7 @@ export const productsData = [
     image: bathroom_rug,
     name: "Bathroom Bath Rug Mat 20 x 31 Inch - Grey",
     rating: {
-      stars: 4.5,
+      stars: rating_45,
       count: 119
     },
     priceCents: 1250,
@@ -372,7 +372,7 @@ export const productsData = [
     image: women_knit_ballet_flat_black,
     name: "Women's Knit Ballet Flat",
     rating: {
-      stars: 4,
+      stars: rating_40,
       count: 326
     },
     priceCents: 2640,
@@ -388,7 +388,7 @@ export const productsData = [
     image: men_golf_polo_t_shirt_blue,
     name: "Men's Regular-Fit Quick-Dry Golf Polo Shirt",
     rating: {
-      stars: 4.5,
+      stars: rating_45,
       count: 2556
     },
     priceCents: 1599,
@@ -406,7 +406,7 @@ export const productsData = [
     image: trash_can_with_foot_pedal_50_liter,
     name: "Trash Can with Foot Pedal - Brushed Stainless Steel",
     rating: {
-      stars: 4.5,
+      stars: rating_45,
       count: 2286
     },
     priceCents: 8300,
@@ -422,7 +422,7 @@ export const productsData = [
     image: duvet_cover_set_blue_twin,
     name: "Duvet Cover Set with Zipper Closure",
     rating: {
-      stars: 4,
+      stars: rating_40,
       count: 456
     },
     priceCents: 2399,
@@ -439,7 +439,7 @@ export const productsData = [
     image: men_chino_pants_beige,
     name: "Men's Classic-fit Pleated Chino Pants",
     rating: {
-      stars: 4.5,
+      stars: rating_45,
       count: 9017
     },
     priceCents: 2290,
@@ -454,7 +454,7 @@ export const productsData = [
     image: men_athletic_shoes_green,
     name: "Men's Athletic Sneaker",
     rating: {
-      stars: 4,
+      stars: rating_40,
       count: 229
     },
     priceCents: 3890,
@@ -470,7 +470,7 @@ export const productsData = [
     image: men_navigator_sunglasses_brown,
     name: "Men's Navigator Sunglasses Pilot",
     rating: {
-      stars: 3.5,
+      stars: rating_35,
       count: 42
     },
     priceCents: 1690,
@@ -486,7 +486,7 @@ export const productsData = [
     image: vanity_mirror_silver,
     name: "Vanity Mirror with Heavy Base - Chrome",
     rating: {
-      stars: 4.5,
+      stars: rating_45,
       count: 130
     },
     priceCents: 1649,
@@ -502,7 +502,7 @@ export const productsData = [
     image: women_french_terry_fleece_jogger_camo,
     name: "Women's Fleece Jogger Sweatpant",
     rating: {
-      stars: 4.5,
+      stars: rating_45,
       count: 248
     },
     priceCents: 2400,
@@ -519,7 +519,7 @@ export const productsData = [
     image: round_airtight_food_storage_containers,
     name: "Round Airtight Food Storage Containers - 5 Piece",
     rating: {
-      stars: 4,
+      stars: rating_40,
       count: 126
     },
     priceCents: 2899,
@@ -534,7 +534,7 @@ export const productsData = [
     image: coffeemaker_with_glass_carafe_black,
     name: "Coffeemaker with Glass Carafe and Reusable Filter - 25 Oz, Black",
     rating: {
-      stars: 4.5,
+      stars: rating_45,
       count: 1211
     },
     priceCents: 2250,
@@ -549,7 +549,7 @@ export const productsData = [
     image: blackout_curtains_black,
     name: "Blackout Curtains Set 42 x 84-Inch - Black, 2 Panels",
     rating: {
-      stars: 4.5,
+      stars: rating_45,
       count: 363
     },
     priceCents: 3099,
@@ -563,7 +563,7 @@ export const productsData = [
     image: countertop_blender_sixty_four_oz,
     name: "Countertop Blender - 64oz, 1400 Watts",
     rating: {
-      stars: 4,
+      stars: rating_40,
       count: 3
     },
     priceCents: 10747,
@@ -578,7 +578,7 @@ export const productsData = [
     image: floral_mixing_bowl_set,
     name: "10-Piece Mixing Bowl Set with Lids - Floral",
     rating: {
-      stars: 5,
+      stars: rating_50,
       count: 679
     },
     priceCents: 3899,
@@ -594,7 +594,7 @@ export const productsData = [
     image: kitchen_paper_towels_thirty_pack,
     name: "2-Ply Kitchen Paper Towels - 30 Pack",
     rating: {
-      stars: 4.5,
+      stars: rating_45,
       count: 1045
     },
     priceCents: 5799,
@@ -609,7 +609,7 @@ export const productsData = [
     image: men_cozy_fleece_zip_up_hoodie_red,
     name: "Men's Full-Zip Hooded Fleece Sweatshirt",
     rating: {
-      stars: 4.5,
+      stars: rating_45,
       count: 3157
     },
     priceCents: 2400,

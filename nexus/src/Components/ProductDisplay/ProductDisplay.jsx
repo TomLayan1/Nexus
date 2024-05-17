@@ -22,10 +22,11 @@ const ProductDisplay = () => {
               </div>
               <div className='product-other--bx'>
                 <p className='product-name'>{product.name}</p>
+                <img className='star' src={product.rating.stars} alt='Rating'/>
                 <p className='price'>${(product.priceCents / 100).toFixed(2)}</p>
                 <div className='quantity--bx'>
                   <button className='reduce-btn'>-</button>
-                  <p className='quantity'>20</p>
+                  <p className='quantity'>0</p>
                   <button className='increase-btn'>+</button>
                 </div>
               </div>

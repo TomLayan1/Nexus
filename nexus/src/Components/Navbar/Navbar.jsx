@@ -17,26 +17,27 @@ const Navbar = () => {
   return (
     <div className='navbar' id='navbar'>
       <div className='logo--bx'>
-        <div className='hamburger' onClick={handleNav}>
-          {nav ? (<FaTimes className='hamburger-x' size={25} style = {{marginRight: '20px', cursor: 'pointer', color: 'blue' }}/>) : ( <FaBars className='hamburger-bar' size={25} />)}
-        </div>
         <h2 className='logo'><span className='n--span'>N</span>EXUS</h2>
+        <div className='search--bx'>
+          <input className='search' type='search' placeholder='Search'/>
+          <button className='search-btn'>SEARCH</button>
+        </div>
         <div className='search-signup--bx'>
-          <div className='search--bx'>
-            <input className='search' type='search' placeholder='Search'/>
-            <img className='search-icon' src={assets.searchIcon} alt='search-icon'/>
-          </div>
+          <img className='search-icon' src={assets.searchIcon} alt='search-icon'/>
           <button className='signup--btn'>Sign up</button>
         </div>
       </div>
       <div className='nav--bx'>
-        <div className='social--bx'>
-        {/* Social Icons Here */}
+        <div className='hamburger-social--bx'>
+          <div className='hamburger' onClick={handleNav}>
+            {nav ? (<FaTimes className='hamburger-x' size={25} style = {{marginRight: '20px', cursor: 'pointer', color: 'blue' }}/>) : ( <FaBars className='hamburger-bar' size={25} />)}
+          </div>
         </div>
         <nav>
           <div onClick={()=>setMenu('home')} className={menu === 'home' ? 'current--menu' : ''}>Home</div>
           <div onClick={()=>setMenu('contact')} className={menu === 'contact' ? 'current--menu' : ''}>Contact</div>
           <div onClick={()=>setMenu('about')} className={menu === 'about' ? 'current--menu' : ''}>About</div>
+          <div onClick={()=>setMenu('delivery')} className={menu === 'delivery' ? 'current--menu' : ''}>Delivery</div>
         </nav>
         <div className='cart--bx'>
           <div className='cart-quantity'>0</div>

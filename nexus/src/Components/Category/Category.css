@@ -1,12 +1,14 @@
 .explore--menu{
-  width: 80%;
+  width: 85%;
+  height: 270px;
   margin: auto;
   padding: 10px;
   margin-bottom: 30px;
 }
 .category-statement-bx{
-  margin-bottom: 40px;
+  height: 30%;
   text-align: center;
+  margin-bottom: 3px;
 }
 .category-header-txt{
   font-weight: 900;
@@ -17,18 +19,28 @@
 }
 .category-menu-bx{
   width: 100%;
+  height: 67%;
   display: flex;
-  gap: 30px;
-
+  gap: 25px;
+  padding: 18px 0;
 }
 .category--bx{
-  width: 10%;
+  width: 100px;
+  height: 100%;
+  padding: 1px;
+}
+.category-img--bx{
+  width: 100%;
+  height: 70%;
+  border: 3px solid black;
+  border-radius: 50%;
+  margin-bottom: 3px;
 }
 .category-img{
   width: 100%;
-  border-radius: 50%;
+  height: 100%;
+  border-radius: inherit;
   margin-bottom: 4px;
-  border: 3px solid black;
 }
 .category--name{
   font-size: 14px;
