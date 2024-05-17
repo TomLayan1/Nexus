@@ -2,7 +2,9 @@ import React from 'react'
 import './Category.css'
 import { categoryData } from '../../Assets/Assets'
 
-const Category = () => {
+
+const Category = ({category, setCategory}) => {
+
   
   return (
     <div className='explore--menu' id='explore--menu'>

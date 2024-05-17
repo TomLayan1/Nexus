@@ -4,7 +4,8 @@ import { StoreContext } from '../../Context/StoreContext';
 
 const ProductDisplay = () => {
   // Get the productData using context api
-  const {productsData} = useContext(StoreContext)
+  const {productsData, addToCart} = useContext(StoreContext)
+  
 
   return (
     <div className='product-display--bx' id='product-display--bx'>
@@ -22,15 +23,12 @@ const ProductDisplay = () => {
               </div>
               <div className='product-other--bx'>
                 <p className='product-name'>{product.name}</p>
-                <img className='star' src={product.rating.stars} alt='Rating'/>
-                <p className='price'>${(product.priceCents / 100).toFixed(2)}</p>
-                <div className='quantity--bx'>
-                  <button className='reduce-btn'>-</button>
-                  <p className='quantity'>0</p>
-                  <button className='increase-btn'>+</button>
+                <div className='star-price--bx'>
+                  <img className='star' src={product.rating.stars} alt='Rating'/>
+                  <p className='price'>${(product.priceCents / 100).toFixed(2)}</p>
                 </div>
               </div>
-              <button className='add-btn'>ADD TO CART</button>
+              <button className='add-btn' onClick={() => addToCart(product.id)}>ADD TO CART</button>
             </div>
         )
         })}

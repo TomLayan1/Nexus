@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import './Navbar.css'
 import {  FaBars, FaTimes } from 'react-icons/fa'
 import { assets } from '../../Assets/Assets'
+import { Link } from 'react-router-dom'
+
 
 const Navbar = () => {
 
@@ -34,14 +36,14 @@ const Navbar = () => {
           </div>
         </div>
         <nav>
-          <div onClick={()=>setMenu('home')} className={menu === 'home' ? 'current--menu' : ''}>Home</div>
-          <div onClick={()=>setMenu('contact')} className={menu === 'contact' ? 'current--menu' : ''}>Contact</div>
-          <div onClick={()=>setMenu('about')} className={menu === 'about' ? 'current--menu' : ''}>About</div>
-          <div onClick={()=>setMenu('delivery')} className={menu === 'delivery' ? 'current--menu' : ''}>Delivery</div>
+          <div onClick={()=>setMenu('home')} className={menu === 'home' ? 'current--menu' : ''}><Link to={'/'}>Home</Link></div>
+          <div onClick={()=>setMenu('delivery')} className={menu === 'delivery' ? 'current--menu' : ''}><Link>Delivery</Link></div>
+          <div onClick={()=>setMenu('about')} className={menu === 'about' ? 'current--menu' : ''}><Link>About</Link></div>
+          <div onClick={()=>setMenu('contact')} className={menu === 'contact' ? 'current--menu' : ''}><Link>Contact us</Link></div>
         </nav>
         <div className='cart--bx'>
           <div className='cart-quantity'>0</div>
-          <img className='cart--icon' src={assets.cartIcon} alt='cart icon'/>
+          <Link to={'/cart'}><img className='cart--icon' src={assets.cartIcon} alt='cart icon'/></Link>
         </div>
       </div>
     </div>

@@ -69,7 +69,8 @@ export const assets = {
   rating_45,
   rating_50,
   cartIcon,
-  searchIcon
+  searchIcon,
+  women_stretch_popover_hoodie_black
 }
 
 export const categoryData = [

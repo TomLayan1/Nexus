@@ -1,0 +1,11 @@
+.cart{
+  width: 100%;
+  min-height: 100vh;
+  padding: 180px 30px 30px 30px;
+}
+.cart-component--bx{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: top;
+}
