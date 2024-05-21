@@ -75,39 +75,39 @@ export const assets = {
 
 export const categoryData = [
   {
-    image: six_piece_white_dinner_plate_set,
+    image: categoryImage,
     name: 'All'
   },
   {
-    image: men_slim_fit_summer_shorts_gray,
+    image: categoryImage,
     name: 'Men wears'
   },
   {
-    image: women_stretch_popover_hoodie_black,
+    image: categoryImage,
     name: 'Women wears'
   },
   {
-    image: men_athletic_shoes_green,
+    image: categoryImage,
     name: 'Foot wears'
   },
   {
-    image: women_chiffon_beachwear_coverup_black,
+    image: categoryImage,
     name: 'Beddings'
   },
   {
-    image: women_stretch_popover_hoodie_black,
+    image: categoryImage,
     name: 'Kitchen'
   },
   {
-    image: women_chiffon_beachwear_coverup_black,
+    image: categoryImage,
     name: 'Tissues'
   },
   {
-    image: vanity_mirror_silver,
+    image: categoryImage,
     name: 'Accessories'
   },
   {
-    image: men_slim_fit_summer_shorts_gray,
+    image: categoryImage,
     name: 'Category name'
   }
 ]

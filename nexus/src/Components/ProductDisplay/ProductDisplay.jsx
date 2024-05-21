@@ -28,7 +28,7 @@ const ProductDisplay = () => {
                   <p className='price'>${(product.priceCents / 100).toFixed(2)}</p>
                 </div>
               </div>
-              <button className='add-btn' onClick={() => addToCart(product.id)}>ADD TO CART</button>
+              <button className='add-to-cart-btn' onClick={() => addToCart(product.id)}>ADD TO CART</button>
             </div>
         )
         })}

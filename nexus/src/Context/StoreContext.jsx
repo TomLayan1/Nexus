@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import { productsData } from "../Assets/Assets";
+import { deliveryOptions } from "../Assets/DeliveryDate";
 
 export const StoreContext = createContext(null);
 
@@ -23,13 +24,12 @@ const StoreContextProvider = (props) => {
   }
 
   const removeFromCart = (id) => {
-    setCart(prevCart => ({...prevCart, [id]: prevCart[id] - 1}))
+    setCart(prevCart => ({...prevCart, [id]: prevCart[id] - 1, deliveryOptionId: '1'}))
   }
 
   // Save cart to localStorage whenever it changes
   useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(cart));
-    console.log(cart);
   }, [cart]);
 
   const contextValue = {
@@ -37,7 +37,8 @@ const StoreContextProvider = (props) => {
     cart,
     setCart,
     addToCart,
-    removeFromCart
+    removeFromCart,
+    deliveryOptions
   }
 
   return (

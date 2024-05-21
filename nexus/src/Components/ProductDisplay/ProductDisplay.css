@@ -4,7 +4,6 @@
 
 }
 .display-statement--bx{
-  text-align: center;
   margin-bottom: 40px;
 }
 .display-header{
@@ -20,6 +19,7 @@
   gap: 30px 35px;
 }
 .product--bx{
+  background-color: white;
   width: 200px;
   height: auto;
   display: flex;
@@ -92,7 +92,7 @@
   text-align: center;
   font-weight: bold;
 }
-.add-btn{
+.add-to-cart-btn{
   width: 100%;
   height: 32px;
   font-weight: bold;

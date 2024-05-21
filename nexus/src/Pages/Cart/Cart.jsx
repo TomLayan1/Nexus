@@ -8,7 +8,7 @@ import CartSummary from '../../Components/CartSummary/CartSummary'
 const Cart = () => {
   return (
     <div className='cart' id='cart'>
-      <h2>Your Cart</h2>
+      <h2 className='cart-header'>Your Cart</h2>
       <div className='cart-component--bx'>
         <CartItem />
         <CartSummary />
