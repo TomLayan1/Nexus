@@ -24,7 +24,7 @@ const StoreContextProvider = (props) => {
   }
 
   const removeFromCart = (id) => {
-    setCart(prevCart => ({...prevCart, [id]: prevCart[id] - 1, deliveryOptionId: '1'}))
+    setCart(prevCart => ({...prevCart, [id]: prevCart[id] - 1}))
   }
 
   // Save cart to localStorage whenever it changes

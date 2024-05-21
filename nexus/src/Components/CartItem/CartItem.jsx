@@ -8,19 +8,39 @@ const CartItem = () => {
 
   const {productsData, cart, addToCart, removeFromCart, deliveryOptions} = useContext(StoreContext);
 
+  // state is initialized as an empty object.
+  // It will hold the selected delivery option index for each product.
   const [selectedDeliveryOption, setSelectedDeliveryOption] = useState({});
   console.log(selectedDeliveryOption)
 
+
+
+
+
+
+// Load the selected delivery options from localStorage when the component mounts
   useEffect(() => {
-    const initialOption = {};
+    const savedOptions = localStorage.getItem('selectedDeliveryOptions');
+    if (savedOptions) {
+      setSelectedDeliveryOption(JSON.parse(savedOptions));
+    }
+    else {
+      // Initialize the first delivery option by default if no saved options exist
+      const initialSelection = {};
       productsData.forEach(product => {
         if (cart[product.id] > 0) {
-          // select the first delivery optioin by default
-          initialOption[product.id] = 0;
+          initialSelection[product.id] = 0; // Select the first delivery option by default
         }
-      })
-    setSelectedDeliveryOption(initialOption);
-  }, [cart, productsData])
+      });
+      setSelectedDeliveryOption(initialSelection);
+    }
+  }, [productsData, cart]);
+
+  // Save the selected delivery options to localStorage whenever they change
+  useEffect(() => {
+    localStorage.setItem('selectedDeliveryOptions', JSON.stringify(selectedDeliveryOption));
+  }, [selectedDeliveryOption]);
+
 
   // updates the state with the selected delivery option for the given product.
   const handleDeliveryOption = (productId, deliveryOptionIndex) => {
@@ -35,11 +55,16 @@ const CartItem = () => {
     <div className='cartItem-main--bx cart-items-display'>
       {productsData.map((product, index) => {
         if (cart[product.id] > 0) {
+          const selectedOptionIndex = selectedDeliveryOption[product.id] ?? 0;
+          const selectedOption = deliveryOptions[selectedOptionIndex];
+          const today = dayjs();
+          const selectedDeliveryDate = selectedOption ? today.add(selectedOption.deliveryDays, 'days').format('dddd, MMMM D') : '';
+
           return (
             <div className="main-item-container" key={index}>
               <div className="date-img-name-container">
                 <div className="delivery-date-container">
-                  <h3 className="delivery-date">delivery date: Thursday 16, November</h3>
+                  <h3 className="delivery-date">delivery date: {selectedDeliveryDate}</h3>
                 </div>
                 <div className="img-name-container">
                   <div className="product-img-container">
