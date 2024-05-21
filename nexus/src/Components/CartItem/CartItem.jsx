@@ -11,6 +11,16 @@ const CartItem = () => {
   const [selectedDeliveryOption, setSelectedDeliveryOption] = useState({});
   console.log(selectedDeliveryOption)
 
+  useEffect(() => {
+    const initialOption = {};
+      productsData.forEach(product => {
+        if (cart[product.id] > 0) {
+          // select the first delivery optioin by default
+          initialOption[product.id] = 0;
+        }
+      })
+    setSelectedDeliveryOption(initialOption);
+  }, [cart, productsData])
 
   // updates the state with the selected delivery option for the given product.
   const handleDeliveryOption = (productId, deliveryOptionIndex) => {
