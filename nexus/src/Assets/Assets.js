@@ -5,11 +5,13 @@ import categoryImage from './Category/placeholder.png'
 import cartIcon from './icons/cart-icon.png'
 import searchIcon from './icons/search-icon.png'
 
+// Cart page background
+import cart_background from './icons/cart_background.png'
+
 // Product images
 import six_piece_white_dinner_plate_set from './ProductImages/6-piece-white-dinner-plate-set.jpg'
 import adults_plain_cotton_tshirt_two_pack_teal from './ProductImages/adults-plain-cotton-tshirt-2-pack-teal.jpg'
 import athletic_cotton_socks_six_pairs from './ProductImages/athletic-cotton-socks-6-pairs.jpg'
-import backpack from './ProductImages/backpack.jpg'
 import bathroom_rug from './ProductImages/bathroom-rug.jpg'
 import black_two_slot_toaster from './ProductImages/black-2-slot-toaster.jpg'
 import blackout_curtains_black from './ProductImages/blackout-curtains-black.jpg'
@@ -33,7 +35,6 @@ import plain_hooded_fleece_sweatshirt_yellow from './ProductImages/plain-hooded-
 import round_airtight_food_storage_containers from './ProductImages/round-airtight-food-storage-containers.jpg'
 import round_sunglasses_black from './ProductImages/round-sunglasses-black.jpg'
 import trash_can_with_foot_pedal_50_liter from './ProductImages/trash-can-with-foot-pedal-50-liter.jpg'
-import umbrella from './ProductImages/umbrella.jpg'
 import vanity_mirror_silver from './ProductImages/vanity-mirror-silver.jpg'
 import beach_sandals_women from './ProductImages/women-beach-sandals.jpg'
 import women_chiffon_beachwear_coverup_black from './ProductImages/women-chiffon-beachwear-coverup-black.jpg'
@@ -69,6 +70,7 @@ export const assets = {
   rating_45,
   rating_50,
   cartIcon,
+  cart_background,
   searchIcon,
   women_stretch_popover_hoodie_black
 }
@@ -114,7 +116,7 @@ export const categoryData = [
 
 
 // 1. We save the data (the information about our product) in to an object put in an array:
-export const productsData = [
+export const product = [
   {
     id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
     image: athletic_cotton_socks_six_pairs,

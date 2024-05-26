@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import './Navbar.css'
 import {  FaBars, FaTimes } from 'react-icons/fa'
 import { assets } from '../../Assets/Assets'
 import { Link } from 'react-router-dom'
+import { StoreContext } from '../../Context/StoreContext';
 
 
 const Navbar = () => {
@@ -14,6 +15,8 @@ const Navbar = () => {
   const handleNav = () => {
     setNav(!nav)
   }
+
+  const {getTotalQuantity} = useContext(StoreContext);
 
 
   return (
@@ -42,7 +45,7 @@ const Navbar = () => {
           <div onClick={()=>setMenu('contact')} className={menu === 'contact' ? 'current--menu' : ''}><Link>Contact us</Link></div>
         </nav>
         <div className='cart--bx'>
-          <div className='cart-quantity'>0</div>
+          <div className='cart-quantity'>{getTotalQuantity()}</div>
           <Link to={'/cart'}><img className='cart--icon' src={assets.cartIcon} alt='cart icon'/></Link>
         </div>
       </div>

@@ -4,19 +4,10 @@
   padding: 160px 60px 30px 60px;
 }
 .cart-header{
-  background: white;
-  width: 98.4%;
-  height: 45px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+
   padding-left: 10px;
   color: #1d1b1a;
-  margin-bottom: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, .5);
-  margin: auto;
-  border-radius: 5px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 .cart-component--bx{
   width: 100%;

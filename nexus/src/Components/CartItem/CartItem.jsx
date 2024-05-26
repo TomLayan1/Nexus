@@ -2,120 +2,115 @@ import React, { useState,useContext, useEffect } from 'react';
 import './CartItem.css';
 import { StoreContext } from '../../Context/StoreContext';
 import dayjs from 'dayjs';
+import { assets } from '../../Assets/Assets'
+
 
 
 const CartItem = () => {
 
-  const {productsData, cart, addToCart, removeFromCart, deliveryOptions} = useContext(StoreContext);
-
-  // state is initialized as an empty object.
-  // It will hold the selected delivery option index for each product.
-  const [selectedDeliveryOption, setSelectedDeliveryOption] = useState({});
-  console.log(selectedDeliveryOption)
+  const {product, storeCart, increaseItemQuantity, reduceItemQuantity, deleteItem, deliveryOptions, selectedDeliveryOption, setSelectedDeliveryOption} = useContext(StoreContext);
 
 
-
-
-
-
-// Load the selected delivery options from localStorage when the component mounts
   useEffect(() => {
-    const savedOptions = localStorage.getItem('selectedDeliveryOptions');
-    if (savedOptions) {
-      setSelectedDeliveryOption(JSON.parse(savedOptions));
-    }
-    else {
-      // Initialize the first delivery option by default if no saved options exist
-      const initialSelection = {};
-      productsData.forEach(product => {
-        if (cart[product.id] > 0) {
-          initialSelection[product.id] = 0; // Select the first delivery option by default
-        }
-      });
-      setSelectedDeliveryOption(initialSelection);
-    }
-  }, [productsData, cart]);
-
-  // Save the selected delivery options to localStorage whenever they change
-  useEffect(() => {
-    localStorage.setItem('selectedDeliveryOptions', JSON.stringify(selectedDeliveryOption));
-  }, [selectedDeliveryOption]);
+    // Retrieve saved delivery options from localStorage
+    const savedDeliveryOptions = JSON.parse(localStorage.getItem('updatedOption')) || {};
+    
+    // Initialize selectedDeliveryOption state with default values
+    const initialDeliveryOption = {};
+    Object.keys(storeCart).forEach(productId => {
+      // Set the first delivery option to selected by default
+      initialDeliveryOption[productId] = savedDeliveryOptions[productId] !== undefined ? savedDeliveryOptions[productId] : 0;
+    })
+    setSelectedDeliveryOption(initialDeliveryOption);
+  }, [storeCart]);
 
 
-  // updates the state with the selected delivery option for the given product.
-  const handleDeliveryOption = (productId, deliveryOptionIndex) => {
-       setSelectedDeliveryOption(prevState => ({
-      ...prevState,
-      [productId]: deliveryOptionIndex
-    }));
-  }
+  // A function that will handle change when a delivery option is selected
+  const handleDeliveryOption = (productId, optionIndex) => {
+    const updatedOption = {...selectedDeliveryOption, [productId]: optionIndex}
+    setSelectedDeliveryOption(updatedOption);
+
+    // Save updated options to localStorage
+    localStorage.setItem('updatedOption', JSON.stringify(updatedOption));
+  };
 
 
   return (
     <div className='cartItem-main--bx cart-items-display'>
-      {productsData.map((product, index) => {
-        if (cart[product.id] > 0) {
-          const selectedOptionIndex = selectedDeliveryOption[product.id] ?? 0;
-          const selectedOption = deliveryOptions[selectedOptionIndex];
-          const today = dayjs();
-          const selectedDeliveryDate = selectedOption ? today.add(selectedOption.deliveryDays, 'days').format('dddd, MMMM D') : '';
-
-          return (
-            <div className="main-item-container" key={index}>
-              <div className="date-img-name-container">
-                <div className="delivery-date-container">
-                  <h3 className="delivery-date">delivery date: {selectedDeliveryDate}</h3>
-                </div>
-                <div className="img-name-container">
-                  <div className="product-img-container">
-                    <img className="item-img" src={product.image} alt=''/>
+      {Object.keys(storeCart).length === 0 ? (
+        <div className='empty-cart--bx'>
+          <img className='cart-bg-img' src={assets.cart_background} alt='Cart background'/>
+          <div className='to-shop--bx'>
+            <p className='empty-cart-statement'>Cart is empty</p>
+            <button className='go-to-store-btn'>GO TO STORE</button>
+          </div>
+        </div>
+      ) : (
+        <>
+          {Object.entries(storeCart).map(([productId]) => {
+            const productItem = product.find(product => product.id === productId);
+            if (!productItem) return null;
+            return (
+              <div className="main-item-container" key={productItem.id}>
+                <div className="date-img-name-container">
+                  <div className="delivery-date-container">
+                    <h3 className="delivery-date">
+                      delivery date: {selectedDeliveryOption[productId] !== undefined && (dayjs().add(deliveryOptions[selectedDeliveryOption[productId]].deliveryDays, 'days').format('dddd, MMMM D'))}
+                    </h3>
                   </div>
-                  <div className="name-price-quantity">
-                    <div className="name-price-container">
-                      <p className="item-name">{product.name}</p>
-                      <p className="price">${(product.priceCents/100).toFixed(2)}</p>
+                  <div className="img-name-container">
+                    <div className="product-img-container">
+                      <img className="item-img" src={productItem.image} alt=''/>
                     </div>
-                    <div className="quantity-container">
-                      <div className='cart-item-remove-quantity--bx'>
-                        <button className="reduce-btn js-reduce-btn">-</button>
-                        <p className="`item-quantity">0</p>
-                        <button className="add-btn js-add-btn">+</button>
+                    <div className="name-price-quantity">
+                      <div className="name-price-container">
+                        <p className="item-name">{productItem.name}</p>
+                        <p className="price">${(productItem.priceCents/100).toFixed(2)}</p>
                       </div>
-                      <button className="delete-btn js-delete-btn"><i className='bx bx-trash'></i> Delete</button>
+                      <div className="quantity-container">
+                        <div className='cart-item-remove-quantity--bx'>
+                          <button className="reduce-btn js-reduce-btn" onClick={() => reduceItemQuantity(productItem.id)}>-</button>
+                          <p className="`item-quantity">{storeCart[productItem.id]}</p>
+                          <button className="add-btn js-add-btn" onClick={() => increaseItemQuantity(productItem.id)}>+</button>
+                        </div>
+                        <button className="delete-btn js-delete-btn" onClick={() => deleteItem(productItem.id)}><i className='bx bx-trash'></i>Delete</button>
+                      </div>
                     </div>
                   </div>
                 </div>
+                <div className="shipping-option-container">
+                  <p className='delivery-text'>Choose delivery date</p>
+                  {/* Delivery options */}
+                  { deliveryOptions.map((deliveryOption, optionIndex) => {
+                    {/* Use the dayjs external libraryy to calculate delivery dates */}
+                    const today = dayjs();
+                    const deliveryDate = today.add(deliveryOption.deliveryDays, 'days');
+                    const dateString = deliveryDate.format('dddd, MMMM D');
+                    const shippingPrice = deliveryOption.priceCents === 0 ? 'FREE' : `$${(deliveryOption.priceCents/100).toFixed(2)}`;
+                    
+                    return(
+                      <div className="shipping-option" key={optionIndex}>
+                        <input
+                        className="select-term"
+                        type="radio"
+                        name={productItem.id}
+                        // attribute of the radio button uses a ternary operator to determine if the current option is selected.
+                        checked={selectedDeliveryOption[productItem.id] === optionIndex}
+                        onChange={() => handleDeliveryOption(productItem.id, optionIndex)}
+                        />
+                        <div className="term-container">
+                          <p className="shipping-term">{dateString}</p>
+                          <p className="term-fee">{shippingPrice} - Shipping</p>
+                        </div>        
+                      </div>
+                    )}
+                  )}
+                </div>
               </div>
-              <div className="shipping-option-container">
-                {/* Delivery options */}
-                { deliveryOptions.map((deliveryOption, optionIndex) => {
-                  const today = dayjs();
-                  const deliveryDate = today.add(deliveryOption.deliveryDays, 'days');
-                  const dateString = deliveryDate.format('dddd, MMMM D');
-
-                  const shippingPrice = deliveryOption.priceCents === 0 ? 'FREE' : (deliveryOption.priceCents/100).toFixed(2)
-                  return(
-                    <div className="shipping-option" key={optionIndex}>
-                      <input
-                      className="select-term"
-                      type="radio"
-                      name={product.id}
-                      // attribute of the radio button uses a ternary operator to determine if the current option is selected.
-                      checked={selectedDeliveryOption[product.id] === optionIndex}
-                      onChange={() => handleDeliveryOption(product.id, optionIndex)}
-                      />
-                      <div className="term-container">
-                        <p className="shipping-term">{dateString}</p>
-                        <p className="term-fee">${shippingPrice} - Shipping</p>
-                      </div>        
-                    </div>
-                )
-  }) }
-              </div>
-            </div>
-          )
-        }
-      })}
+            )
+          })}
+        </>
+      )}
     </div>
   )
 }

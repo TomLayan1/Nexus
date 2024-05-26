@@ -42,9 +42,10 @@
   height: 100%;
 }
 .product-other--bx{
-  max-width: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: left;
   padding: 0 5px;
 }
 .product-name{
@@ -56,40 +57,15 @@
 }
 .star-price--bx{
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
 }
 .star{
-  width: 100px;
-  margin-bottom: 10px;
+  width: 90px;
 }
 .price{
   font-size: 16px;
   color: #d40000;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-.quantity--bx{
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: auto;
-  height: 28px;
-  border: none;
-  margin-bottom: 10px;
-}
-.reduce-btn, .increase-btn{
-  width: 30%;
-  height: 100%;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  font-size: 20px;
-  background: #d40000;
-}
-.quantity{
-  text-align: center;
   font-weight: bold;
 }
 .add-to-cart-btn{

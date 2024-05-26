@@ -40,6 +40,7 @@
   border-bottom-left-radius: 5px;
   padding: 5px;
   color: #161616;
+  outline: none;
 }
 .search-btn{
   background: #d40000;
@@ -103,6 +104,7 @@
   justify-content: center;
   align-items: center;
   padding: 10px 3px;
+  outline: none;
 }
 nav{
   height: 100%;
