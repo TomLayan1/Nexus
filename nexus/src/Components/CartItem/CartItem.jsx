@@ -3,36 +3,13 @@ import './CartItem.css';
 import { StoreContext } from '../../Context/StoreContext';
 import dayjs from 'dayjs';
 import { assets } from '../../Assets/Assets'
+import { Link } from 'react-router-dom'
 
 
 
 const CartItem = () => {
 
-  const {product, storeCart, increaseItemQuantity, reduceItemQuantity, deleteItem, deliveryOptions, selectedDeliveryOption, setSelectedDeliveryOption} = useContext(StoreContext);
-
-
-  useEffect(() => {
-    // Retrieve saved delivery options from localStorage
-    const savedDeliveryOptions = JSON.parse(localStorage.getItem('updatedOption')) || {};
-    
-    // Initialize selectedDeliveryOption state with default values
-    const initialDeliveryOption = {};
-    Object.keys(storeCart).forEach(productId => {
-      // Set the first delivery option to selected by default
-      initialDeliveryOption[productId] = savedDeliveryOptions[productId] !== undefined ? savedDeliveryOptions[productId] : 0;
-    })
-    setSelectedDeliveryOption(initialDeliveryOption);
-  }, [storeCart]);
-
-
-  // A function that will handle change when a delivery option is selected
-  const handleDeliveryOption = (productId, optionIndex) => {
-    const updatedOption = {...selectedDeliveryOption, [productId]: optionIndex}
-    setSelectedDeliveryOption(updatedOption);
-
-    // Save updated options to localStorage
-    localStorage.setItem('updatedOption', JSON.stringify(updatedOption));
-  };
+  const {product, storeCart, increaseItemQuantity, reduceItemQuantity, deleteItem, deliveryOptions, handleDeliveryOption, selectedDeliveryOption} = useContext(StoreContext);
 
 
   return (
@@ -42,7 +19,7 @@ const CartItem = () => {
           <img className='cart-bg-img' src={assets.cart_background} alt='Cart background'/>
           <div className='to-shop--bx'>
             <p className='empty-cart-statement'>Cart is empty</p>
-            <button className='go-to-store-btn'>GO TO STORE</button>
+            <Link className='to-store-link' to='/home'><button className='to-store-btn'>GO TO STORE</button></Link>
           </div>
         </div>
       ) : (
@@ -55,7 +32,8 @@ const CartItem = () => {
                 <div className="date-img-name-container">
                   <div className="delivery-date-container">
                     <h3 className="delivery-date">
-                      delivery date: {selectedDeliveryOption[productId] !== undefined && (dayjs().add(deliveryOptions[selectedDeliveryOption[productId]].deliveryDays, 'days').format('dddd, MMMM D'))}
+                      {/* delivery date: {selectedDeliveryOption[productId] !== undefined && (dayjs().add(deliveryOptions[selectedDeliveryOption[productId]].deliveryDays, 'days').format('dddd, MMMM D'))} */}
+                      delivery date: {storeCart[productItem.id].deliveryOptionIndex !== undefined && dayjs().add(deliveryOptions[storeCart[productItem.id].deliveryOptionIndex].deliveryDays, 'days').format('dddd, MMMM D')}
                     </h3>
                   </div>
                   <div className="img-name-container">
@@ -70,7 +48,7 @@ const CartItem = () => {
                       <div className="quantity-container">
                         <div className='cart-item-remove-quantity--bx'>
                           <button className="reduce-btn js-reduce-btn" onClick={() => reduceItemQuantity(productItem.id)}>-</button>
-                          <p className="`item-quantity">{storeCart[productItem.id]}</p>
+                          <p className="`item-quantity">{storeCart[productItem.id].quantity}</p>
                           <button className="add-btn js-add-btn" onClick={() => increaseItemQuantity(productItem.id)}>+</button>
                         </div>
                         <button className="delete-btn js-delete-btn" onClick={() => deleteItem(productItem.id)}><i className='bx bx-trash'></i>Delete</button>
@@ -95,7 +73,7 @@ const CartItem = () => {
                         type="radio"
                         name={productItem.id}
                         // attribute of the radio button uses a ternary operator to determine if the current option is selected.
-                        checked={selectedDeliveryOption[productItem.id] === optionIndex}
+                        checked={storeCart[productItem.id].deliveryOptionIndex === optionIndex}
                         onChange={() => handleDeliveryOption(productItem.id, optionIndex)}
                         />
                         <div className="term-container">

@@ -121,6 +121,9 @@ nav div{
   color: white;
   font-weight: bold;
   height: 100%;
+}
+nav .navbar-link{
+  height: 100%;
   cursor: pointer;
 }
 .cart--bx{

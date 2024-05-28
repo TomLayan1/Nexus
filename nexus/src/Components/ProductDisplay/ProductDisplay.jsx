@@ -5,7 +5,6 @@ import { StoreContext } from '../../Context/StoreContext';
 const ProductDisplay = () => {
   // Get the productData using context api
   const {product, addToCart} = useContext(StoreContext)
-  
 
   return (
     <div className='product-display--bx' id='product-display--bx'>
@@ -15,7 +14,7 @@ const ProductDisplay = () => {
       </div>
       <div className='display--bx'>
         {/* Iterate through the productData array to generate instances of each product */}
-        {product.map((product, index) => {
+        {product.map((product) => {
           return (
             <div className='product--bx' key={product.id}>
               <div className='product-img--bx'>

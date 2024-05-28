@@ -3,7 +3,7 @@ import './CartSummary.css'
 import { StoreContext } from '../../Context/StoreContext';
 
 const CartSummary = () => {
-  const {getTotalQuantity, getCartItemPrice, getshippingTotalPrice, priceBeforeShipping, getEstimatedTax, totalPrice} = useContext(StoreContext);
+  const {getTotalQuantity, getCartItemPrice, getShippingTotalPrice, priceBeforeShipping, getEstimatedTax, totalPrice} = useContext(StoreContext);
 
 
   return (
@@ -15,7 +15,7 @@ const CartSummary = () => {
         </div>
         <div className="shipping-summary-container">
           <p className="shipping-handling">Shipping & handling:</p>
-          <p className="shipping-fee">${getshippingTotalPrice()}</p>
+          <p className="shipping-fee">${getShippingTotalPrice()}</p>
         </div>
         <div className="before-tax-summary-container">
           <p className="before-tax">Total before tax:</p>

@@ -1,6 +1,5 @@
 .cartItem-main--bx{
   width: 50%;
-  /* height: 100%; */
   padding: 10px;
 }
 .empty-cart--bx{
@@ -12,8 +11,8 @@
 }
 .cart-bg-img{
   width: 235px;
-  opacity: 0.4;
-  margin-bottom: 20px;
+  opacity: 0.2;
+  margin-bottom: 18px;
 }
 .to-shop--bx{
   width: 250px;
@@ -26,12 +25,17 @@
   font-size: 15px;
   color: #1d1b1a;
 }
-.go-to-store-btn{
+.to-store-link {
   width: 100%;
   height: 45px;
+  border-radius: 5px;
+}
+.to-store-btn{
+  width: 100%;
+  height: 100%;
   background: #fe8c00;
   border: none;
-  border-radius: 5px;
+  border-radius: inherit;
   color: black;
   font-weight: bold;
   box-shadow: 0 0 5px rgba(0, 0, 0, .5);

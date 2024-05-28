@@ -13,11 +13,17 @@ const StoreContextProvider = (props) => {
       return savedCart ? JSON.parse(savedCart) : [];
     }
   );
+  console.log(storeCart)
 
   // Save cart to localStorage whenever it changes
   useEffect(() => {
     localStorage.setItem('storeCart', JSON.stringify(storeCart));
   }, [storeCart]);
+
+  // state is initialized as an empty object.
+  // It will hold the selected delivery option index for each product.
+  const [selectedDeliveryOption, setSelectedDeliveryOption] = useState({});
+
 
   // Function to add to cart
   const addToCart = (id) => {
@@ -25,21 +31,18 @@ const StoreContextProvider = (props) => {
       setStoreCart(prevCart => ({...prevCart, [id]: prevCart[id] + 1}))
     }
     else{
-      setStoreCart(prevCart => ({...prevCart, [id]: 1}))
+      setStoreCart(prevCart => ({...prevCart, [id]: { quantity: 1, deliveryOptionIndex: 0 }}))
     }
   };
 
   // This function to increases quantity
   const increaseItemQuantity = (id) => {
     setStoreCart(prevCart => {
-      // Declare a variable that is equal to the quantity of the id 
-      const currentQuantitty = prevCart[id];
+      // Declare a variable that is equal to the quantity of the id
+      const currentStoreCart = prevCart[id];
       // Check if the quantity is less than 10
-      if (currentQuantitty < 10) {
-        return {...prevCart, [id]: currentQuantitty + 1}
-      }
-      // Return the prevCart quantity unchanged if the quantity is 10
-      return prevCart
+      const newQuantity = currentStoreCart.quantity < 10 ? currentStoreCart.quantity + 1 : currentStoreCart.quantity;
+      return { ...prevCart, [id]: { ...currentStoreCart, quantity: newQuantity } };
     })
   }
 
@@ -47,15 +50,14 @@ const StoreContextProvider = (props) => {
   const reduceItemQuantity = (id) => {
     setStoreCart(prevCart => {
       // Declare a variable that is equal to the quantity of the id
-      const currentQuantity = prevCart[id];
+      const currentStoreCart = prevCart[id];
       // Check if the quantity is greater than 1
-      if (currentQuantity > 1) {
-        return {...prevCart, [id]: currentQuantity - 1}
-      }
-      // Return the prevCart quantity unchanged if the quantity is 1
-      return prevCart
-    })
-  }
+      const newQuantity = currentStoreCart.quantity > 1 ? currentStoreCart.quantity - 1: currentStoreCart.quantity;
+
+      return{ ...prevCart, [id]: {...currentStoreCart, quantity: newQuantity} };
+    });
+  };
+
   // This function to delete item
   const deleteItem = (id) => {
     setStoreCart(prevCart => {
@@ -65,48 +67,67 @@ const StoreContextProvider = (props) => {
     })
   }
 
+  // A function that will handle change when a delivery option is selected
+  const handleDeliveryOption = (productId, optionIndex) => {
+    setStoreCart(prevCart => ({ ...prevCart,[productId]: {...prevCart[productId], deliveryOptionIndex: optionIndex}}))
+  }
   // Function to calculate total quantity of items in the cart
   const getTotalQuantity = () => {
-    return Object.values(storeCart).reduce((total, quantity) => total + quantity, 0);
+    return Object.values(storeCart).reduce((total, storeCart) => total + storeCart.quantity, 0);
   };
 
-    // state is initialized as an empty object.
-  // It will hold the selected delivery option index for each product.
-  const [selectedDeliveryOption, setSelectedDeliveryOption] = useState({});
 
 
-  // Function for payment summary
-
+  // PAYMENT SUMMARY
   // Function to calculate total amount of items in the cart
   const getCartItemPrice = () => {
     let itemPriceTotal = 0
-    for (const item in storeCart) {
-      if (storeCart[item] > 0) {
-        let itemPriceInfo = product.find(product => product.id === item);
-        itemPriceTotal += (itemPriceInfo.priceCents * storeCart[item]) / 100;
+    for (const itemId in storeCart) {
+      if (storeCart[itemId].quantity > 0) {
+        let itemPriceInfo = product.find(product => product.id === itemId);
+        itemPriceTotal += (itemPriceInfo.priceCents * storeCart[itemId].quantity) / 100;
       }
     }
     return itemPriceTotal.toFixed(2);
   }
 
-
-  // Function to calculate total amount of items in the cart
-  const getshippingTotalPrice = () => {
-    let itemShippingTotal = 0
-    for (const item in storeCart) {
-      if (storeCart[item] > 0) {
-        const shippingOptionIndex = selectedDeliveryOption[item] || 0;
-        const deliveryFee = deliveryOptions[shippingOptionIndex].priceCents
+  const getShippingTotalPrice = () => {
+  let itemShippingTotal = 0;
+  for (const itemId in storeCart) {
+    const cartItem = storeCart[itemId];
+    if (cartItem.quantity > 0) {
+      const shippingOptionIndex = selectedDeliveryOption[itemId] !== undefined ? selectedDeliveryOption[itemId] : cartItem.deliveryOptionIndex;
+      if (shippingOptionIndex >= 0 && shippingOptionIndex < deliveryOptions.length) {
+        const deliveryFee = deliveryOptions[shippingOptionIndex].priceCents;
         itemShippingTotal += deliveryFee / 100;
+      } else {
+        console.warn(`Invalid shipping option index ${shippingOptionIndex} for item ${itemId}`);
       }
     }
-    return itemShippingTotal.toFixed(2);
   }
+  return itemShippingTotal.toFixed(2);
+};
+
+
+  // Function to calculate total amount of items in the cart
+  // const getshippingTotalPrice = () => {
+  //   let itemShippingTotal = 0;
+  //   for (const itemId in storeCart) {
+  //     if (storeCart[itemId].quantity > 0) {
+  //       const shippingOptionIndex = selectedDeliveryOption[itemId] !== undefined ? selectedDeliveryOption[itemId] : storeCart.deliveryOptionIndex;
+  //       const deliveryFee = deliveryOptions[shippingOptionIndex].priceCents;
+  //       itemShippingTotal += deliveryFee / 100;
+  //     }
+  //   }
+  //   console.log(itemShippingTotal)
+  //   return itemShippingTotal.toFixed(2);
+  // }
+  // console.log(getshippingTotalPrice())
 
   // Function for total price without shipping
   const priceBeforeShipping = () => {
     const cartPriceTotal = getCartItemPrice();
-    const shippingFeeTotal = getshippingTotalPrice();
+    const shippingFeeTotal = getShippingTotalPrice();
     const sum = Number(cartPriceTotal) + Number(shippingFeeTotal);
     return sum.toFixed(2)
   }
@@ -138,9 +159,10 @@ const StoreContextProvider = (props) => {
     selectedDeliveryOption,
     setSelectedDeliveryOption,
     deliveryOptions,
+    handleDeliveryOption,
     getTotalQuantity,
     getCartItemPrice,
-    getshippingTotalPrice,
+    getShippingTotalPrice,
     priceBeforeShipping,
     getEstimatedTax,
     totalPrice

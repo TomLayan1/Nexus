@@ -22,7 +22,7 @@ const Navbar = () => {
   return (
     <div className='navbar' id='navbar'>
       <div className='logo--bx'>
-        <h2 className='logo'><span className='n--span'>N</span>EXUS</h2>
+        <Link to={'/home'}><h2 className='logo'><span className='n--span'>N</span>EXUS</h2></Link>
         <div className='search--bx'>
           <input className='search' type='search' placeholder='Search'/>
           <button className='search-btn'>SEARCH</button>
@@ -39,15 +39,15 @@ const Navbar = () => {
           </div>
         </div>
         <nav>
-          <div onClick={()=>setMenu('home')} className={menu === 'home' ? 'current--menu' : ''}><Link to={'/'}>Home</Link></div>
-          <div onClick={()=>setMenu('delivery')} className={menu === 'delivery' ? 'current--menu' : ''}><Link>Delivery</Link></div>
-          <div onClick={()=>setMenu('about')} className={menu === 'about' ? 'current--menu' : ''}><Link>About</Link></div>
-          <div onClick={()=>setMenu('contact')} className={menu === 'contact' ? 'current--menu' : ''}><Link>Contact us</Link></div>
+          <Link className='navbar-link' to={'/home'} onClick={()=>setMenu('home')}><div className={menu === 'home' ? 'current--menu' : ''}>Home</div></Link>
+          <Link className='navbar-link' to={''} onClick={()=>setMenu('delivery')}><div className={menu === 'delivery' ? 'current--menu' : ''}>Delivery</div></Link>
+          <Link className='navbar-link' to={''} onClick={()=>setMenu('about')}><div className={menu === 'about' ? 'current--menu' : ''}>About</div></Link>
+          <Link className='navbar-link' to={''} onClick={()=>setMenu('contact')}><div className={menu === 'contact' ? 'current--menu' : ''}>Contact us</div></Link>
         </nav>
-        <div className='cart--bx'>
+        <Link to={'/cart'}><div className='cart--bx'>
           <div className='cart-quantity'>{getTotalQuantity()}</div>
-          <Link to={'/cart'}><img className='cart--icon' src={assets.cartIcon} alt='cart icon'/></Link>
-        </div>
+          <img className='cart--icon' src={assets.cartIcon} alt='cart icon'/>
+        </div></Link>
       </div>
     </div>
   )
