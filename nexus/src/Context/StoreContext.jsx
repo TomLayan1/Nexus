@@ -13,7 +13,6 @@ const StoreContextProvider = (props) => {
       return savedCart ? JSON.parse(savedCart) : [];
     }
   );
-  console.log(storeCart)
 
   // Save cart to localStorage whenever it changes
   useEffect(() => {
@@ -28,7 +27,7 @@ const StoreContextProvider = (props) => {
   // Function to add to cart
   const addToCart = (id) => {
     if(storeCart[id]){
-      setStoreCart(prevCart => ({...prevCart, [id]: prevCart[id] + 1}))
+      setStoreCart(prevCart => ({...prevCart, [id]: prevCart.quantity + 1}))
     }
     else{
       setStoreCart(prevCart => ({...prevCart, [id]: { quantity: 1, deliveryOptionIndex: 0 }}))
@@ -71,13 +70,14 @@ const StoreContextProvider = (props) => {
   const handleDeliveryOption = (productId, optionIndex) => {
     setStoreCart(prevCart => ({ ...prevCart,[productId]: {...prevCart[productId], deliveryOptionIndex: optionIndex}}))
   }
+
+
   // Function to calculate total quantity of items in the cart
   const getTotalQuantity = () => {
     return Object.values(storeCart).reduce((total, storeCart) => total + storeCart.quantity, 0);
   };
 
-
-
+  
   // PAYMENT SUMMARY
   // Function to calculate total amount of items in the cart
   const getCartItemPrice = () => {
@@ -92,37 +92,21 @@ const StoreContextProvider = (props) => {
   }
 
   const getShippingTotalPrice = () => {
-  let itemShippingTotal = 0;
-  for (const itemId in storeCart) {
-    const cartItem = storeCart[itemId];
-    if (cartItem.quantity > 0) {
-      const shippingOptionIndex = selectedDeliveryOption[itemId] !== undefined ? selectedDeliveryOption[itemId] : cartItem.deliveryOptionIndex;
-      if (shippingOptionIndex >= 0 && shippingOptionIndex < deliveryOptions.length) {
-        const deliveryFee = deliveryOptions[shippingOptionIndex].priceCents;
-        itemShippingTotal += deliveryFee / 100;
-      } else {
-        console.warn(`Invalid shipping option index ${shippingOptionIndex} for item ${itemId}`);
+    let itemShippingTotal = 0;
+    for (const itemId in storeCart) {
+      const cartItem = storeCart[itemId];
+      if (cartItem.quantity > 0) {
+        const shippingOptionIndex = selectedDeliveryOption[itemId] !== undefined ? selectedDeliveryOption[itemId] : cartItem.deliveryOptionIndex;
+        if (shippingOptionIndex >= 0 && shippingOptionIndex < deliveryOptions.length) {
+          const deliveryFee = deliveryOptions[shippingOptionIndex].priceCents;
+          itemShippingTotal += deliveryFee / 100;
+        } else {
+          console.warn(`Invalid shipping option index ${shippingOptionIndex} for item ${itemId}`);
+        }
       }
     }
-  }
-  return itemShippingTotal.toFixed(2);
-};
-
-
-  // Function to calculate total amount of items in the cart
-  // const getshippingTotalPrice = () => {
-  //   let itemShippingTotal = 0;
-  //   for (const itemId in storeCart) {
-  //     if (storeCart[itemId].quantity > 0) {
-  //       const shippingOptionIndex = selectedDeliveryOption[itemId] !== undefined ? selectedDeliveryOption[itemId] : storeCart.deliveryOptionIndex;
-  //       const deliveryFee = deliveryOptions[shippingOptionIndex].priceCents;
-  //       itemShippingTotal += deliveryFee / 100;
-  //     }
-  //   }
-  //   console.log(itemShippingTotal)
-  //   return itemShippingTotal.toFixed(2);
-  // }
-  // console.log(getshippingTotalPrice())
+    return itemShippingTotal.toFixed(2);
+  };
 
   // Function for total price without shipping
   const priceBeforeShipping = () => {

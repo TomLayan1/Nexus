@@ -1,0 +1,104 @@
+.register-main--bx{
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: #00000090;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+.hamburger--bx{
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  /* position: fixed; */
+}
+.register-form--bx{
+  background: white;
+  width: 600px;
+  margin: auto;
+  padding: 20px;
+  opacity: 1;
+  /* position: fixed; */
+}
+.currentForm{
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+.login--bx{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.login-input{
+  width: 100%;
+  height: 35px;
+  padding: 8px;
+  outline: none;
+  border: 1px solid #d40000;
+  margin-bottom: 10px;
+}
+.tnc-text{
+  margin-bottom: 10px;
+}
+.t-n-c{
+  color: gray;
+}
+.tnc-text, .to-signup{
+  font-size: 12px;
+}
+.register-input--bx {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.register-input{
+  width: 49%;
+  height: 35px;
+  padding: 8px;
+  outline: none;
+  border: 1px solid #d40000;
+}
+.location-register--bx{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.location-register-input{
+  width: 32%;
+  height: 35px;
+  padding: 8px;
+  border: 1px solid #d40000;
+}
+.address-register--bx{
+  width: 100%;
+  margin-bottom: 10px;
+}
+.address-register-input{
+  width: 100%;
+  height: 35px;
+  padding: 8px 8px;
+  border: 1px solid #d40000;
+  height: 50px;
+  line-height: 5px
+}
+.form-button--bx{
+  width: 50%;
+  height: 35px;
+  margin: auto;
+  margin-bottom: 15px;
+}
+.form-btn{
+  width: 100%;
+  height: 100%;
+  background: #fe8c00;
+  border: none;
+  border-radius: 5px;
+}
+.form-span{
+  color: #fe8c00;
+  font-weight: bold;
+  cursor: pointer;
+}

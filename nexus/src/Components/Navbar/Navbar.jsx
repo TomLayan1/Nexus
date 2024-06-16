@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import { StoreContext } from '../../Context/StoreContext';
 
 
-const Navbar = () => {
+const Navbar = ({setSignUp, signUp}) => {
 
   const [menu, setMenu] = useState('home')
 
@@ -29,7 +29,7 @@ const Navbar = () => {
         </div>
         <div className='search-signup--bx'>
           <img className='search-icon' src={assets.searchIcon} alt='search-icon'/>
-          <button className='signup--btn'>Sign up</button>
+          <button onClick={() =>setSignUp(!signUp)} className='signup--btn'>Login</button>
         </div>
       </div>
       <div className='nav--bx'>
