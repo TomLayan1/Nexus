@@ -1,19 +1,18 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './Home.css'
+import Footer from '../../Components/Footer/Footer'
 import Category from '../../Components/Category/Category'
-import ProductDisplay from '../../Components/ProductDisplay/ProductDisplay'
-import Contact from '../../Components/Contact/Contact'
+import ProductsDisplay from '../../Components/ProdutsDisplay/ProductsDisplay'
 
 const Home = () => {
-  // Declare a state to select category
-  const [category, setCategory] = useState('All')
+
   return (
     <div className='home' id='home'>
-      <Category category={category} setCategory={setCategory}/>
-      <hr/>
-      <ProductDisplay />
-      <hr/>
-      <Contact />
+      <div className='home-components'>
+        <Category />
+        <ProductsDisplay />
+      </div>
+      <Footer />
     </div>
   )
 }

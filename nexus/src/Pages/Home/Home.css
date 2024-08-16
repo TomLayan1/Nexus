@@ -1,8 +1,22 @@
 .home{
   width: 100%;
-  min-height: 100vh;
-  padding: 180px 100px 60px 100px;
 }
-hr{
-  margin-bottom: 50px;
+.home-components{
+  width: 100%;
+  padding: 100px 140px;
+  position: relative;
+}
+
+/* Tablet */
+@media (max-width: 890px) {
+  .home-components {
+    padding: 100px 80px;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .home-components {
+    padding: 100px 19px;
+  }
 }

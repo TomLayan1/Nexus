@@ -1,17 +1,28 @@
-.cart{
+.cart-bx{
   width: 100%;
-  min-height: 100vh;
-  padding: 160px 60px 30px 60px;
+  padding: 110px 140px 0 140px;
 }
 .cart-header{
-
-  padding-left: 10px;
-  color: #1d1b1a;
-  margin-bottom: 8px;
+  margin-bottom: 30px;
 }
-.cart-component--bx{
-  width: 100%;
+.cart-info-bx{
   display: flex;
-  justify-content: space-between;
   align-items: top;
+  justify-content: space-between;
+}
+
+@media (max-width: 890px) {
+  .cart-bx{
+    padding: 100px 80px;
+  }
+  .cart-info-bx{
+    flex-direction: column;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .cart-bx{
+    padding: 100px 23px;
+  }
 }

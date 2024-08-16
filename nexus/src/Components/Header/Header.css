@@ -1,0 +1,136 @@
+.notification-nav{
+  width: 100%;
+  background-color: #044104;
+  position: fixed;
+  top: 65px;
+  left: 0;
+  display: flex;
+  padding: 15px 144px;
+  z-index: 400;
+}
+.notification{
+  text-align: center;
+  color: #ffffff;
+}
+.header{
+  width: 100%;
+  background-color: #000000;
+  color: #ffffff;
+  padding: 14px 140px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 500;
+}
+.logo{
+  font-size: 25px;
+  color: #ffffff
+}
+.logo-bx{
+  color: #d40000;
+}
+.logo-span{
+  background-color: #fe8c00;
+  color: #ffffff;
+  padding: 2px 8px;
+  border-radius: 50%;
+}
+.nav-bx{
+  position: relative;
+}
+nav{
+  width: 330px;
+}
+ul{
+  display: flex;
+  gap: 55px;
+}
+li{
+  list-style: none;
+  color: #ffffff;
+}
+.cart-ham-bx{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.nav-cart-bx{
+  position: relative;
+}
+.cartIcon{
+  width: 35px;
+}
+.cart-quantity{
+  position: absolute;
+  top: -8px;
+  right: 17px;
+  color: #fe8c00;
+}
+.ham-bx{
+  display: none;
+  z-index: 1000;
+}
+
+/* Tablet */
+@media (max-width: 890px) {
+.notification-nav {
+    padding: 15px 80px;
+  }
+  .header {
+    padding: 14px 80px;
+  }
+  .logo{
+    font-size: 22px;
+  }
+  .empty {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #00000079;
+  }
+  nav{
+    position: fixed;
+    width: 40%;
+    height: 100vh;
+    background-color: #ffffff;
+    padding: 100px 0;
+    top: 0;
+    right: 0;
+    z-index: 600;
+    display: flex;
+    transition: .5s ease-in-out;
+  }
+  ul{
+    width: 100%;
+    border: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  .menu{
+    transform: translateX(100%);
+  }
+  li {
+    font-size: 17px;
+    color: #000000;
+  }
+  .ham-bx {
+    display: block;
+  }
+}
+
+
+/* Phones */
+@media (max-width: 480px) {
+.notification-nav {
+    padding: 15px 22px;
+  }
+  .header {
+    padding: 16px 23px;
+  }
+}

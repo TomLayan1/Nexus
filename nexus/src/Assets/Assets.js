@@ -81,42 +81,46 @@ export const categoryData = [
     name: 'All'
   },
   {
-    image: categoryImage,
-    name: 'Men wears'
+    image: men_slim_fit_summer_shorts_gray,
+    name: 'mens'
   },
   {
-    image: categoryImage,
-    name: 'Women wears'
+    image: women_chiffon_beachwear_coverup_black,
+    name: 'womens'
   },
   {
-    image: categoryImage,
-    name: 'Foot wears'
+    image: knit_athletic_sneakers_gray,
+    name: 'footwears'
   },
   {
-    image: categoryImage,
-    name: 'Beddings'
+    image: black_two_slot_toaster,
+    name: 'appliances'
   },
   {
-    image: categoryImage,
-    name: 'Kitchen'
+    image: coffeemaker_with_glass_carafe_black,
+    name: 'kitchen'
   },
   {
-    image: categoryImage,
-    name: 'Tissues'
+    image: intermediate_composite_basketball,
+    name: 'sports'
   },
   {
-    image: categoryImage,
-    name: 'Accessories'
+    image: duvet_cover_set_blue_twin,
+    name: 'bathroom'
   },
   {
-    image: categoryImage,
-    name: 'Category name'
+    image: adults_plain_cotton_tshirt_two_pack_teal,
+    name: 'apparel'
+  },
+  {
+    image: bathroom_rug,
+    name: 'home'
   }
 ]
 
 
 // 1. We save the data (the information about our product) in to an object put in an array:
-export const product = [
+export const products = [
   {
     id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
     image: athletic_cotton_socks_six_pairs,
@@ -268,7 +272,8 @@ export const product = [
       "swimsuit",
       "swimming",
       "bathing",
-      "apparel"
+      "apparel",
+      "womens"
     ],
     type: "clothing",
     sizeChartLink: "images/clothing-size-chart.png"

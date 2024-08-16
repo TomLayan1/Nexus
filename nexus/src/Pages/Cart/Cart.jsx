@@ -1,20 +1,26 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import './Cart.css'
-import { Link } from 'react-router-dom'
-import CartItem from '../../Components/CartItem/CartItem'
+import { FaTimes } from 'react-icons/fa';
 import CartSummary from '../../Components/CartSummary/CartSummary'
-
+import Checkout from '../../Components/Checkout/Checkout'
+import { StoreContext } from '../../Context/Context'
 
 const Cart = () => {
-
+  // FROMcONTEXT
+  const { notification, setNotification } = useContext(StoreContext)
   return (
-    <div className='cart' id='cart'>
-      <h2 className='cart-header'>Your Cart</h2>
-      <div className='cart-component--bx'>
-        <CartItem/>
+    <>
+    {notification && <div className='notification-nav'>
+      <p className='notification'>{notification}</p>
+    </div>}
+    <div className='cart-bx'>
+      <h2 className='cart-header'>Cart Items</h2>
+      <div className='cart-info-bx'>
         <CartSummary />
+        <Checkout />
       </div>
     </div>
+    </>
   )
 }
 
