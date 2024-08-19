@@ -9,20 +9,23 @@ const StoreContextProvider = (props) => {
 
   // STATE FOR CATEGORY
   const [selectedCategory, setSelectedCategory] = useState('All');
-  console.log(selectedCategory);
+  // console.log(selectedCategory);
 
   // STATE FOR PRODUCTS
   const [storeProducts, setStoreProducts] = useState(products);
-
-  // FUNCTION TO FILTER ITEMS BASED ON CATEGORY
   
+  // FUNCTION TO FILTER ITEMS BASED ON CATEGORY
+  const handleCategory = (name) => {}
 
   // STATE FOR DELIVERY OPTION INDEX
   // state is initialized as an empty object.
   const [selectedDeliveryOption, setSelectedDeliveryOption] = useState({});
-
+  
   // State to handle notifications
   const [notification, setNotification] = useState(null);
+  
+
+
 
   // Auto-hide notification after 3 seconds
   useEffect(() => {
@@ -50,6 +53,7 @@ const StoreContextProvider = (props) => {
       setStoreCart(prev => ({...prev, [id]: {quantity: 1, deliveryOptionIndex: 0}}))
       setNotification('Item Added To Cart')
     }
+    console.log('confirm cart', storeCart )
   }
 
   // FUNCTION TO REDUCE QUANTITY

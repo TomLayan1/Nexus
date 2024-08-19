@@ -130,7 +130,7 @@ export const products = [
       count: 87
     },
     priceCents: 1090,
-    keywords: [
+    category: [
       "socks",
       "sports",
       "apparel"
@@ -145,7 +145,7 @@ export const products = [
       count: 127
     },
     priceCents: 2095,
-    keywords: [
+    category: [
       "sports",
       "basketballs"
     ]
@@ -159,7 +159,7 @@ export const products = [
       count: 56
     },
     priceCents: 799,
-    keywords: [
+    category: [
       "tshirts",
       "apparel",
       "mens"
@@ -176,7 +176,7 @@ export const products = [
       count: 2197
     },
     priceCents: 1899,
-    keywords: [
+    category: [
       "toaster",
       "kitchen",
       "appliances"
@@ -191,7 +191,7 @@ export const products = [
       count: 37
     },
     priceCents: 2067,
-    keywords: [
+    category: [
       "plates",
       "kitchen",
       "dining"
@@ -206,7 +206,7 @@ export const products = [
       count: 317
     },
     priceCents: 2400,
-    keywords: [
+    category: [
       "hoodies",
       "sweaters",
       "apparel"
@@ -221,7 +221,7 @@ export const products = [
       count: 144
     },
     priceCents: 3599,
-    keywords: [
+    category: [
       "bathroom",
       "washroom",
       "restroom",
@@ -238,7 +238,7 @@ export const products = [
       count: 305
     },
     priceCents: 2899,
-    keywords: [
+    category: [
       "bathroom",
       "cleaning"
     ]
@@ -252,7 +252,7 @@ export const products = [
       count: 89
     },
     priceCents: 3390,
-    keywords: [
+    category: [
       "shoes",
       "running shoes",
       "footwear"
@@ -267,7 +267,7 @@ export const products = [
       count: 235
     },
     priceCents: 2070,
-    keywords: [
+    category: [
       "robe",
       "swimsuit",
       "swimming",
@@ -287,7 +287,7 @@ export const products = [
       count: 30
     },
     priceCents: 1560,
-    keywords: [
+    category: [
       "accessories",
       "shades"
     ]
@@ -301,7 +301,7 @@ export const products = [
       count: 562
     },
     priceCents: 2499,
-    keywords: [
+    category: [
       "footwear",
       "sandals",
       "womens",
@@ -318,7 +318,7 @@ export const products = [
       count: 160
     },
     priceCents: 1699,
-    keywords: [
+    category: [
       "shorts",
       "apparel",
       "mens"
@@ -333,7 +333,7 @@ export const products = [
       count: 99
     },
     priceCents: 2374,
-    keywords: [
+    category: [
       "kleenex",
       "tissues",
       "kitchen",
@@ -350,7 +350,7 @@ export const products = [
       count: 2465
     },
     priceCents: 1374,
-    keywords: [
+    category: [
       "hooded",
       "hoodies",
       "sweaters",
@@ -369,7 +369,7 @@ export const products = [
       count: 119
     },
     priceCents: 1250,
-    keywords: [
+    category: [
       "bathmat",
       "bathroom",
       "home"
@@ -384,7 +384,7 @@ export const products = [
       count: 326
     },
     priceCents: 2640,
-    keywords: [
+    category: [
       "shoes",
       "flats",
       "womens",
@@ -400,7 +400,7 @@ export const products = [
       count: 2556
     },
     priceCents: 1599,
-    keywords: [
+    category: [
       "tshirts",
       "shirts",
       "apparel",
@@ -418,7 +418,7 @@ export const products = [
       count: 2286
     },
     priceCents: 8300,
-    keywords: [
+    category: [
       "garbage",
       "bins",
       "cans",
@@ -434,7 +434,7 @@ export const products = [
       count: 456
     },
     priceCents: 2399,
-    keywords: [
+    category: [
       "bedroom",
       "bed sheets",
       "sheets",
@@ -451,7 +451,7 @@ export const products = [
       count: 9017
     },
     priceCents: 2290,
-    keywords: [
+    category: [
       "pants",
       "apparel",
       "mens"
@@ -466,7 +466,7 @@ export const products = [
       count: 229
     },
     priceCents: 3890,
-    keywords: [
+    category: [
       "shoes",
       "running shoes",
       "footwear",
@@ -482,7 +482,7 @@ export const products = [
       count: 42
     },
     priceCents: 1690,
-    keywords: [
+    category: [
       "sunglasses",
       "glasses",
       "accessories",
@@ -498,7 +498,7 @@ export const products = [
       count: 130
     },
     priceCents: 1649,
-    keywords: [
+    category: [
       "bathroom",
       "washroom",
       "mirrors",
@@ -514,7 +514,7 @@ export const products = [
       count: 248
     },
     priceCents: 2400,
-    keywords: [
+    category: [
       "pants",
       "sweatpants",
       "jogging",
@@ -531,7 +531,7 @@ export const products = [
       count: 126
     },
     priceCents: 2899,
-    keywords: [
+    category: [
       "boxes",
       "food containers",
       "kitchen"
@@ -546,7 +546,7 @@ export const products = [
       count: 1211
     },
     priceCents: 2250,
-    keywords: [
+    category: [
       "coffeemakers",
       "kitchen",
       "appliances"
@@ -561,7 +561,7 @@ export const products = [
       count: 363
     },
     priceCents: 3099,
-    keywords: [
+    category: [
       "bedroom",
       "home"
     ]
@@ -575,7 +575,7 @@ export const products = [
       count: 3
     },
     priceCents: 10747,
-    keywords: [
+    category: [
       "food blenders",
       "kitchen",
       "appliances"
@@ -590,7 +590,7 @@ export const products = [
       count: 679
     },
     priceCents: 3899,
-    keywords: [
+    category: [
       "mixing bowls",
       "baking",
       "cookware",
@@ -606,7 +606,7 @@ export const products = [
       count: 1045
     },
     priceCents: 5799,
-    keywords: [
+    category: [
       "kitchen",
       "kitchen towels",
       "tissues"
@@ -621,7 +621,7 @@ export const products = [
       count: 3157
     },
     priceCents: 2400,
-    keywords: [
+    category: [
       "sweaters",
       "hoodies",
       "apparel",

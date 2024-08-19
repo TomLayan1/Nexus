@@ -9,6 +9,7 @@
   display: flex;
   align-items: top;
   justify-content: space-between;
+  padding: 20px 0;
 }
 
 @media (max-width: 890px) {

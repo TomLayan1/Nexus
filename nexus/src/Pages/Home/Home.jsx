@@ -12,7 +12,6 @@ const Home = () => {
         <Category />
         <ProductsDisplay />
       </div>
-      <Footer />
     </div>
   )
 }

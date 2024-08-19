@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import './Header.css';
-import { FaTimes } from 'react-icons/fa';
-import cartIcon from '../../Assets/icons/cart_background.png';
+import { FaBars, FaTimes } from 'react-icons/fa';
+import { MdOutlineShoppingCart } from "react-icons/md";
 import { Link } from 'react-router-dom';
 import { StoreContext } from '../../Context/Context';
 
@@ -11,7 +11,7 @@ const Header = () => {
   const [showMenu, setShowMenu] = useState(false)
 
   // FROM CCONTEXT
-  const { getTotalQuantity, notification, setNotification } = useContext(StoreContext)
+    const { getTotalQuantity, notification, setNotification } = useContext(StoreContext)
 
   return (
     <>
@@ -40,13 +40,13 @@ const Header = () => {
       <div className='cart-ham-bx'>
         <div className='nav-icons-bx'>
           <Link to={'/cart'}><div className='nav-cart-bx'>
-            <img className='cartIcon' src={cartIcon} alt='cart' />
+            <MdOutlineShoppingCart size={23} style={{color: 'white'}} />
             <p className='cart-quantity'>{getTotalQuantity()}</p>
           </div></Link>
         </div>
 
           <div className='ham-bx' onClick={()=>setShowMenu(!showMenu)}>
-            <h1>=</h1>
+            {showMenu ? <FaTimes size={23} style={{ color: 'black' }} /> : <FaBars size={23} /> }
           </div>
       </div>
     </header>
