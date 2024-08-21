@@ -19,7 +19,7 @@ const Footer = () => {
           <li className='footer-li'>Contact Us</li>
         </ul>
       </div>
-      <p className='small'>Built with love</p>
+      <p className='small'>&#169; Copyright Tomisin 2024. All Right Reserved</p>
     </footer>
   )
 }

@@ -4,6 +4,8 @@
 }
 .cart-header{
   margin-bottom: 30px;
+  color: #057a61;
+  font-size: 40px;
 }
 .cart-info-bx{
   display: flex;

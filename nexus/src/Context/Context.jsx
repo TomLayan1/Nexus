@@ -7,16 +7,19 @@ export const StoreContext = createContext(null);
 
 const StoreContextProvider = (props) => {
 
+  
+  // STATE FOR PRODUCTS
+  const [storeProducts, setStoreProducts] = useState(products);
+ 
   // STATE FOR CATEGORY
   const [selectedCategory, setSelectedCategory] = useState('All');
   // console.log(selectedCategory);
-
-  // STATE FOR PRODUCTS
-  const [storeProducts, setStoreProducts] = useState(products);
+  console.log(selectedCategory)
   
-  // FUNCTION TO FILTER ITEMS BASED ON CATEGORY
-  const handleCategory = (name) => {}
-
+  // STATE FOR FILTERING THE PRODUCTS TO DISPLAY
+  const [filteredProduct, setFilteredProduct] = useState(products)
+  console.log(filteredProduct)
+  
   // STATE FOR DELIVERY OPTION INDEX
   // state is initialized as an empty object.
   const [selectedDeliveryOption, setSelectedDeliveryOption] = useState({});
@@ -24,7 +27,21 @@ const StoreContextProvider = (props) => {
   // State to handle notifications
   const [notification, setNotification] = useState(null);
   
+  // FUNCTION TO FILTER ITEMS BASED ON CATEGORY
+  const handleCategory = (name) => {
+    if (name === 'All') {
+      setFilteredProduct(products);
+    } else {
+      const filtered = products.filter(product => 
+        product.category.includes(name.toLowerCase())
+      )
+      setFilteredProduct(filtered);
+    }
+  }
 
+  useEffect(() => {
+    handleCategory(selectedCategory)
+  }, [selectedCategory])
 
 
   // Auto-hide notification after 3 seconds
@@ -162,6 +179,8 @@ const StoreContextProvider = (props) => {
     storeCart,
     notification,
     setNotification,
+    filteredProduct,
+    handleCategory,
     addToCart,
     reduceQuantity,
     increaseQuantity,

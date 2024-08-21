@@ -55,6 +55,15 @@ import rating_40 from './ratings/rating-40.png'
 import rating_45 from './ratings/rating-45.png'
 import rating_50 from './ratings/rating-50.png'
 
+import { IoMan, IoWoman } from "react-icons/io5";
+import { FaHome } from "react-icons/fa";
+import { GiRunningShoe } from "react-icons/gi";
+import { FaKitchenSet } from "react-icons/fa6";
+import { MdOutlineSportsBasketball } from "react-icons/md";
+import { FcElectronics } from "react-icons/fc";
+import { GiClothes } from "react-icons/gi";
+import { MdOutlineBathroom } from "react-icons/md";
+
 
 export const assets = {
   categoryImage,
@@ -75,45 +84,47 @@ export const assets = {
   women_stretch_popover_hoodie_black
 }
 
+
+
 export const categoryData = [
   {
-    image: categoryImage,
+    icon: '',
     name: 'All'
   },
   {
-    image: men_slim_fit_summer_shorts_gray,
+    icon: <IoMan className='category-icon' />,
     name: 'mens'
   },
   {
-    image: women_chiffon_beachwear_coverup_black,
+    icon: <IoWoman className='category-icon' />,
     name: 'womens'
   },
   {
-    image: knit_athletic_sneakers_gray,
-    name: 'footwears'
+    icon: <GiRunningShoe className='category-icon' />,
+    name: 'footwear'
   },
   {
-    image: black_two_slot_toaster,
+    icon: <FcElectronics className='category-icon' />,
     name: 'appliances'
   },
   {
-    image: coffeemaker_with_glass_carafe_black,
+    icon: <FaKitchenSet className='category-icon' />,
     name: 'kitchen'
   },
   {
-    image: intermediate_composite_basketball,
+    icon: <MdOutlineSportsBasketball className='category-icon' />,
     name: 'sports'
   },
   {
-    image: duvet_cover_set_blue_twin,
+    icon: <MdOutlineBathroom className='category-icon' />,
     name: 'bathroom'
   },
   {
-    image: adults_plain_cotton_tshirt_two_pack_teal,
+    icon: <GiClothes className='category-icon' />,
     name: 'apparel'
   },
   {
-    image: bathroom_rug,
+    icon: <FaHome className='category-icon' />,
     name: 'home'
   }
 ]

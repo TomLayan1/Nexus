@@ -1,7 +1,6 @@
 .footer{
   width: 100%;
-  /* height: 40vh; */
-  background-color: #000000;
+  background-color: #252926;
   padding: 60px 0 20px 0;
 }
 form{
@@ -31,8 +30,8 @@ form{
   width: 33%;
   height: 34px;
   border: none;
-  background-color: #fe8c00;
-  color: #ffffff;
+  background-color: #af8c53;
+  color: #252926;
   cursor: pointer;
 }
 .footer-menu{
@@ -45,11 +44,11 @@ form{
   justify-content: center;
 }
 .footer-li{
-  color: #ffffff;
+  color: #af8c53;
   font-size: 14px;
 }
 .small{
-  color: #ffffff;
+  color: #af8c53;
   text-align: center;
   font-size: 12px;
 }
@@ -60,7 +59,7 @@ form{
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 650px) {
   form {
     width: 100%;
     padding: 0 10px;

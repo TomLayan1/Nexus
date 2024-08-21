@@ -7,11 +7,7 @@ import { products } from '../../Assets/Assets'
 const ProductsDisplay = () => {
 
   // FROM CONTEXT
-  const { storeProducts, addToCart, selectedCategory } = useContext(StoreContext);
-
-  const [testCategory, setTestCategory ]= useState('sports')
-  const [productTest, setProductTest] = useState(null)
-  console.log(productTest);
+  const { filteredProduct, addToCart } = useContext(StoreContext);
 
   return (
     <section className='products-display-bx' id='products'>
@@ -19,7 +15,7 @@ const ProductsDisplay = () => {
 
       {/* Map through the produdts to make instances of each one */}
       <div className='products-bx'>
-        {storeProducts.map(item => (
+        {filteredProduct.map(item => (
             <div className='item-bx' key={item.id}>
               <div className='item-img-bx'>
                 <img className='item-img' src={item.image} alt={item.name} />

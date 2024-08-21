@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import './Header.css';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { FaBars, FaTimes, FaOpencart } from 'react-icons/fa';
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { Link } from 'react-router-dom';
 import { StoreContext } from '../../Context/Context';
@@ -20,7 +20,7 @@ const Header = () => {
     </div>}
     <header className='header' id='header'>
       <Link to={'/'} className='logo-bx'>
-        <h1 className='logo'><span className='logo-span'>N</span>EXUS</h1>
+        <h1 className='logo'><FaOpencart size={35} /> NEXUS</h1>
       </Link>
 
       <div className='nav-bx'>
@@ -31,7 +31,7 @@ const Header = () => {
           <ul>
             <Link to={'/'}  onClick={()=>setShowMenu(!showMenu)}><li>Home</li></Link>
             <a onClick={()=>setShowMenu(!showMenu)} href='#products'><li>Products</li></a>
-            <Link to={'about'} onClick={()=>setShowMenu(!showMenu)}><li>About</li></Link>
+            <Link to={'/about'} onClick={()=>setShowMenu(!showMenu)}><li>About</li></Link>
             <a onClick={()=>setShowMenu(!showMenu)} href='#contact'><li>Contact</li></a>
           </ul>
         </nav>
@@ -40,13 +40,13 @@ const Header = () => {
       <div className='cart-ham-bx'>
         <div className='nav-icons-bx'>
           <Link to={'/cart'}><div className='nav-cart-bx'>
-            <MdOutlineShoppingCart size={23} style={{color: 'white'}} />
+            <MdOutlineShoppingCart size={23} style={{color: 'black'}} />
             <p className='cart-quantity'>{getTotalQuantity()}</p>
           </div></Link>
         </div>
 
           <div className='ham-bx' onClick={()=>setShowMenu(!showMenu)}>
-            {showMenu ? <FaTimes size={23} style={{ color: 'black' }} /> : <FaBars size={23} /> }
+            {showMenu ? <FaTimes size={23} style={{ color: '#0e4f47' }} /> : <FaBars size={23} style={{ color: '#ffffff'}} /> }
           </div>
       </div>
     </header>

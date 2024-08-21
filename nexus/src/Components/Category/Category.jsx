@@ -1,12 +1,19 @@
 import React, { useContext } from 'react'
-import './Category.css'
+import './Category.css';
 import { categoryData } from '../../Assets/Assets'
 import { StoreContext } from '../../Context/Context';
+import { IoMan, IoWoman } from "react-icons/io5";
+import { FaHome } from "react-icons/fa";
+import { GiRunningShoe } from "react-icons/gi";
+import { FaKitchenSet } from "react-icons/fa6";
+import { MdOutlineSportsBasketball } from "react-icons/md";
+import { FcElectronics } from "react-icons/fc";
+import { GiClothes } from "react-icons/gi";
 
 const Category = () => {
 
   // FROM CONTEXT
-  const {selectedCategory, setSelectedCategory } = useContext(StoreContext)
+  const {filteredProduct, handleCategory, selectedCategory, setSelectedCategory, } = useContext(StoreContext)
 
   return (
     <section className='category-bx' id='category'>
@@ -17,8 +24,8 @@ const Category = () => {
       <div className='category-option-bx'>
         {categoryData.map((itemCategory, index) => (
           <div onClick={()=>setSelectedCategory(itemCategory.name)} key={index} className='option-bx'>
-            <div className='option-img-bx' style={{ border: `${selectedCategory === itemCategory.name ? '3px solid #fe8c00' : '3px solid #000000' }`, padding: `${selectedCategory === itemCategory.name ? '8px' : '5px' }` }}>
-              <img className='option-img' src={itemCategory.image} alt={itemCategory.name} />
+            <div onClick={()=> handleCategory(itemCategory.name)} className='option-icon-bx' style={{ border: `${selectedCategory === itemCategory.name ? '3px solid #057a61' : '' }`, padding: `${selectedCategory === itemCategory.name ? '6px' : '3px' }` }}>
+             {itemCategory.icon === '' ? 'All' : itemCategory.icon}
             </div>
             <p className='option-name'>{itemCategory.name}</p>
           </div>
