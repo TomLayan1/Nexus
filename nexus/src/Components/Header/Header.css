@@ -14,7 +14,7 @@
 }
 .header{
   width: 100%;
-  /* background-color: #252926; */
+  background-color: #ffffff;
   padding: 18px 140px;
   display: flex;
   align-items: center;
@@ -26,18 +26,9 @@
 }
 .logo{
   font-size: 25px;
-  color: #df9e34;
+  color: #1d4c29;
   display: flex;
   align-items: center;
-}
-.logo-bx{
-  color: #d40000;
-}
-.logo-span{
-  background-color: #0e4f47;
-  color: #ffffff;
-  padding: 2px 8px;
-  border-radius: 50%;
 }
 .nav-bx{
   position: relative;
@@ -51,7 +42,7 @@ ul{
 }
 li{
   list-style: none;
-  color: #df9e34;
+  color: #1d4c29;
 }
 .cart-ham-bx{
   display: flex;
@@ -68,7 +59,7 @@ li{
   position: absolute;
   top: -12px;
   right: 2px;
-  color: #ffffff;
+  color: rgb(105, 105, 46);
 }
 .ham-bx{
   display: none;

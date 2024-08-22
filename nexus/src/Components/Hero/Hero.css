@@ -1,42 +1,42 @@
 .hero-section{
-  background-color: #252926;
   width: 100%;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  overflow: hidden;
+}
+.hero-img {
+  width: 80%;
+  height: 75vh;
+  margin: auto;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
 }
 .hero-layer{
+  width: 100%;
+  height: 100%;
+  background-color: #1d372464;
+  border-radius: inherit;
+  padding-left: 35px;
+  position: relative;
+}
+.hero-txt{
+  color: #ffffff;
+  font-size: 33px;
   position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: #1d372453;
-}
-.hero-img{
-  width: 100%;
-  height: 100vh;
-  border-radius: 30px;
-  display: flex;
-  justify-content: space-between;
-  
-}
-.left-bx{
-  width: 45%;
-  height: 100%;
-  display: flex;
-  justify-content: space-between;
+  bottom: 30px;
 }
 .left-img-bx{
-  width: 100%;
+  width: 44%;
   height: 100%;
   background-image: url('../../Assets/Category/home-interior.jpg');
   background-position: center;
   background-size: cover;
+  border-radius: 20px;
 }
 .right-bx{
-  width: 55%;
+  width: 54%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -44,15 +44,50 @@
 }
 .top-img-bx{
   width: 100%;
-  height: 50%;
-  background-image: url('../../Assets/Category/wardrobe.jpeg');
+  height: 48%;
+  background-image: url('../../Assets/Category/kitchen.jpg');
   background-position: center;
   background-size: cover;
+  border-radius: 20px;
 }
 .bottom-img-bx{
   width: 100%;
-  height: 50%;
-  background-image: url('../../Assets//Category//wardrobe.jpeg');
+  height: 48%;
+  background-image: url('../../Assets//Category/wardrobe.jpeg');
   background-position: center;
   background-size: cover;
+  border-radius: 20px;
+}
+
+@media (max-width: 890px) {
+  .hero-img {
+    width: 90%;
+    height: 78vh;
+    flex-direction: column;
+  }
+  .left-img-bx {
+    width: 100%;
+    height: 48%;
+  }
+  .right-bx {
+    width: 100%;
+    height: 48%;
+    flex-direction: row;
+  }
+  .top-img-bx {
+    width: 47%;
+    height: 100%;
+  }
+  .bottom-img-bx {
+    width: 47%;
+    height: 100%;
+  }
+  .hero-layer {
+    padding-left: 20px;
+  }
+  .hero-txt {
+    font-size: 20px;
+    position: absolute;
+    bottom: 20px;
+  }
 }

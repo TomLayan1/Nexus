@@ -1,10 +1,9 @@
 .cart-bx{
   width: 100%;
-  padding: 110px 140px 0 140px;
+  padding: 90px 140px 0 140px;
 }
 .cart-header{
   margin-bottom: 30px;
-  color: #057a61;
   font-size: 40px;
 }
 .cart-info-bx{
@@ -14,6 +13,7 @@
   padding: 20px 0;
 }
 
+/* Medium devices */
 @media (max-width: 890px) {
   .cart-bx{
     padding: 100px 80px;
@@ -23,9 +23,13 @@
   }
 }
 
-/* Phones */
+/* Small devices */
 @media (max-width: 480px) {
   .cart-bx{
     padding: 100px 23px;
+  }
+  .cart-header {
+    margin-bottom: 10px;
+    font-size: 30px;
   }
 }

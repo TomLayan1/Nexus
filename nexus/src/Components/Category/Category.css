@@ -30,23 +30,23 @@
 .option-icon-bx{
   width: 60%;
   height: 55px;
-  background-color: #57625a;
+  background-color: #dadada;
   border-radius: 50%;
   margin-bottom: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #af8c53;
+  color: #1d4c29;
   font-size: 30px;
   font-weight: bold;
 }
 .option-name{
   font-size: 17px;
   font-weight: bold;
-  color: #252926;
+  color: #1d4c29;
 }
 
-
+/* Medium devices */
 @media (max-width: 890px) {
   .category-info-bx {
     width: 88%;
@@ -61,6 +61,7 @@
   }
 }
 
+/* Small devices */
 @media (max-width: 650px) {
   .category-info-bx {
     width: 100%;

@@ -1,7 +1,7 @@
 .footer{
   width: 100%;
-  background-color: #1d3724;
-  padding: 60px 0 20px 0;
+  background-color: #1d4c29;
+  padding: 60px 0 8px 0;
 }
 form{
   width: 33%;
@@ -17,21 +17,23 @@ form{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
 }
 .email{
-  width: 66%;
-  height: 33px;
+  width: 67%;
+  height: 38px;
   padding: 1px 5px;
   border: none;
   outline: none;
 }
 .form-btn{
   width: 33%;
-  height: 34px;
-  border: none;
+  height: 38px;
+  border: 1px solid #af8c53;
   background-color: #af8c53;
-  color: #252926;
+  color: #ffffff;
+  font-size: 15px;
   cursor: pointer;
 }
 .footer-menu{
@@ -44,11 +46,11 @@ form{
   justify-content: center;
 }
 .footer-li{
-  color: #af8c53;
+  color: #ffffff;
   font-size: 14px;
 }
 .small{
-  color: #af8c53;
+  color: #ffffff;
   text-align: center;
   font-size: 12px;
 }
@@ -61,7 +63,7 @@ form{
 
 @media (max-width: 650px) {
   form {
-    width: 100%;
+    width: 90%;
     padding: 0 10px;
   }
   .footer-menu {

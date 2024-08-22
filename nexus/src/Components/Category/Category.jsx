@@ -24,7 +24,7 @@ const Category = () => {
       <div className='category-option-bx'>
         {categoryData.map((itemCategory, index) => (
           <div onClick={()=>setSelectedCategory(itemCategory.name)} key={index} className='option-bx'>
-            <div onClick={()=> handleCategory(itemCategory.name)} className='option-icon-bx' style={{ border: `${selectedCategory === itemCategory.name ? '3px solid #057a61' : '' }`, padding: `${selectedCategory === itemCategory.name ? '6px' : '3px' }` }}>
+            <div onClick={()=> handleCategory(itemCategory.name)} className='option-icon-bx' style={{ border: `${selectedCategory === itemCategory.name ? '3px solid #1d4c29' : '' }`, padding: `${selectedCategory === itemCategory.name ? '6px' : '3px' }` }}>
              {itemCategory.icon === '' ? 'All' : itemCategory.icon}
             </div>
             <p className='option-name'>{itemCategory.name}</p>

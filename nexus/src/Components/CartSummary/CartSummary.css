@@ -41,11 +41,12 @@
   width: 75%;
 }
 .cart-product-name{
-  font-weight: bold;
+  font-weight: 500;
   margin-bottom: 10px;
 }
 .cart-product-price{
   margin-bottom: 15px;
+  font-weight: bold;
 }
 .cart-btn-bx{
   display: flex;
@@ -58,7 +59,7 @@
   height: 30px;
   border: none;
   border-radius: 2px;
-  background-color: #0e4f47;
+  background-color: #1d4c29;
   color: #ffffff;
   font-size: 17px;
   cursor: pointer;
