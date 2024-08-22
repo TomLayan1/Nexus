@@ -51,9 +51,13 @@
   .category-info-bx {
     width: 88%;
   }
-  .option-img-bx {
-    width: 90%;
-    height: 90px;
+  .category-option-bx {
+    height: 110px;
+    gap: 15px;
+    overflow-x: scroll;
+  }
+  .category-option-bx::-webkit-scrollbar{
+    display: none;
   }
 }
 

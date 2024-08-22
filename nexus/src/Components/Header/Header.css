@@ -1,6 +1,6 @@
 .notification-nav{
   width: 100%;
-  background-color: #252926;
+  background-color: #000000;
   position: fixed;
   top: 65px;
   left: 0;
@@ -14,7 +14,7 @@
 }
 .header{
   width: 100%;
-  background-color: #252926;
+  /* background-color: #252926; */
   padding: 18px 140px;
   display: flex;
   align-items: center;
@@ -26,7 +26,7 @@
 }
 .logo{
   font-size: 25px;
-  color: #af8c53;
+  color: #df9e34;
   display: flex;
   align-items: center;
 }
@@ -51,7 +51,7 @@ ul{
 }
 li{
   list-style: none;
-  color: #af8c53;
+  color: #df9e34;
 }
 .cart-ham-bx{
   display: flex;

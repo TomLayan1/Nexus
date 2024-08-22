@@ -40,13 +40,13 @@ const Header = () => {
       <div className='cart-ham-bx'>
         <div className='nav-icons-bx'>
           <Link to={'/cart'}><div className='nav-cart-bx'>
-            <MdOutlineShoppingCart size={23} style={{color: 'black'}} />
+            <MdOutlineShoppingCart size={23} style={{color: '#df9e34'}} />
             <p className='cart-quantity'>{getTotalQuantity()}</p>
           </div></Link>
         </div>
 
           <div className='ham-bx' onClick={()=>setShowMenu(!showMenu)}>
-            {showMenu ? <FaTimes size={23} style={{ color: '#0e4f47' }} /> : <FaBars size={23} style={{ color: '#ffffff'}} /> }
+            {showMenu ? <FaTimes size={23} style={{ color: '#df9e34' }} /> : <FaBars size={23} style={{ color: '#df9e34'}} /> }
           </div>
       </div>
     </header>

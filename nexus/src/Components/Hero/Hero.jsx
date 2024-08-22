@@ -8,11 +8,11 @@ const Hero = () => {
       <div className='hero-layer'></div>
       <div className='hero-img'>
         <div className='left-bx'>
-          <div className='left-img-bx'>beddings</div>
+          <div className='left-img-bx'></div>
         </div>
         <div className='right-bx'>
-          <div className='top-img-bx'>kitchen</div>
-          <div className='bottom-img-bx'>wears</div>
+          <div className='top-img-bx'></div>
+          <div className='bottom-img-bx'></div>
         </div>
       </div>
     </section>
