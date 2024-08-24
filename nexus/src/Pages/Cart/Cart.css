@@ -8,11 +8,20 @@
 }
 .cart-bx{
   width: 100%;
-  padding: 90px 140px 0 140px;
+  padding: 0 140px 0 140px;
+}
+.cart-quantity-header{
+  font-size: 18px;
+  padding: 20px 0;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.quantity-header-span{
+  color: #1d4c29;
 }
 .cart-header{
-  margin-bottom: 30px;
-  font-size: 40px;
+  margin-bottom: 20px;
+  font-size: 25px;
 }
 .cart-info-bx{
   display: flex;
@@ -32,7 +41,7 @@
 }
 
 /* Small devices */
-@media (max-width: 480px) {
+@media (max-width: 650px) {
   .cart-bx{
     padding: 100px 23px;
   }

@@ -19,14 +19,14 @@ const Cart = () => {
     {showPayment && <div className='show-payment'></div>
 }
     <div className='cart-bx'>
-      <div>
-        <h1>Checkout <span>{getTotalQuantity()} items</span></h1>
+      <div className='cart-quantity-header'>
+        <h1>Checkout <span className='quantity-header-span'>({getTotalQuantity()})</span> items</h1>
       </div>
       <p className='cart-header'>Cart Items</p>
       <div className='cart-info-bx'>
         <CartSummary />
         <Checkout setShowPayment={setShowPayment} />
-        <Payment showPayment={showPayment} setShowPayment={setShowPayment} />
+        {showPayment && <Payment showPayment={showPayment} setShowPayment={setShowPayment} />}
       </div>
     </div>
     </>

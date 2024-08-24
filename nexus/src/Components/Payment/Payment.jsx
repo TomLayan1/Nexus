@@ -4,7 +4,7 @@ import { FaTimes } from 'react-icons/fa'
 
 const Payment = ({ showPayment, setShowPayment }) => {
   return (
-    <div className='payment-section' style={{ transform: `${showPayment ? 'translateX(0)' : 'translateX(100%)'}` }}>
+    <div className='payment-section' style={{ transform: `${showPayment ? 'translateX(0)' : 'translateX(100%)'}`, duration: '3s' }}>
       <div className='payment-header-bx'>
         <h2 className='payment-header'>Complete Payment</h2>
         <FaTimes onClick={() => setShowPayment(false)} size={23} style={{ color: '#cec8c8' }} />
