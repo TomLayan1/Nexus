@@ -1,9 +1,10 @@
 .products-display-bx{
   width: 100%;
-  margin: 60px 0 60px 0;
+  margin: 100px 0 60px 0;
 }
 .products-header {
   font-size: 30px;
+  color: #1d4c29;
   margin-bottom: 50px;
 }
 .products-bx{
@@ -43,7 +44,7 @@
   margin-bottom: 15px;
 }
 .item-price{
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 700;
 }
 .item-rating{
@@ -85,6 +86,12 @@
   .item-bx {
     padding: 5px;
     background-color: #ffffff;
+  }
+  .price-rating-bx {
+    padding: 0 3px;
+  }
+  .item-rating {
+    width: 80px;
   }
   .item-info-bx {
     width: 150px;

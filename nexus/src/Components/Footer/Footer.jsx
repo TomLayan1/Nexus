@@ -1,5 +1,6 @@
-import React from 'react'
-import './Footer.css'
+import React from 'react';
+import './Footer.css';
+import { FaFacebook, FaYoutube, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -19,7 +20,15 @@ const Footer = () => {
           <li className='footer-li'>Contact Us</li>
         </ul>
       </div>
-      <p className='small'>&#169; Copyright Tomisin 2024. All Right Reserved</p>
+      <div className='footer-btm-bx'>
+        <p className='small'>&#169; Copyright Tomisin 2024. All Right Reserved</p>
+        <div className='footer-icon-bx'>
+          <a href='facebook'><FaFacebook size={20} style={{ color: '#af8c53' }} /></a>
+          <a href='youtube'><FaYoutube size={20} style={{ color: '#af8c53' }} /></a>
+          <a href='twitter'><FaTwitter size={20} style={{ color: '#af8c53' }} /></a>
+          <a href='instagram'><FaInstagram size={20} style={{ color: '#af8c53' }} /></a>
+        </div>
+      </div>
     </footer>
   )
 }

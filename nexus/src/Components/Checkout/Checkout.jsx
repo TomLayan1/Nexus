@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import './Checkout.css'
 import { StoreContext } from '../../Context/Context'
 
-const Checkout = () => {
+const Checkout = ({ setShowPayment }) => {
 
   // FROM CONTEXT
   const { getTotalQuantity, getShippingTotalPrice, getCartItemPrice, priceBeforeShipping, estimatedTax, totalPrice } = useContext(StoreContext)
@@ -30,7 +30,7 @@ const Checkout = () => {
           <h3 className="order-total">Total Price Of Order</h3>
           <h3 className="total-price">${totalPrice()}</h3>
         </div>
-        <button className='checkout-btn'>CHECKOUT</button>
+        <button onClick={() => setShowPayment(true)} className='checkout-btn'>CHECKOUT</button>
       </div>
     </div>
   )

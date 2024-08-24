@@ -13,12 +13,9 @@ const StoreContextProvider = (props) => {
  
   // STATE FOR CATEGORY
   const [selectedCategory, setSelectedCategory] = useState('All');
-  // console.log(selectedCategory);
-  console.log(selectedCategory)
   
   // STATE FOR FILTERING THE PRODUCTS TO DISPLAY
   const [filteredProduct, setFilteredProduct] = useState(products)
-  console.log(filteredProduct)
   
   // STATE FOR DELIVERY OPTION INDEX
   // state is initialized as an empty object.

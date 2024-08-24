@@ -1,11 +1,12 @@
 .notification-nav{
-  width: 100%;
+  width: 30%;
   background-color: #000000;
   position: fixed;
   top: 65px;
-  left: 0;
+  right: 140px;
   display: flex;
-  padding: 15px 144px;
+  justify-content: space-between;
+  padding: 16px 30px;
   z-index: 400;
 }
 .notification{
@@ -49,9 +50,18 @@ li{
   align-items: center;
   gap: 20px;
 }
+.login-btn{
+  width: 65px;
+  padding: 8px 1px;
+  border: none;
+  background-color: #1d4c29;
+  color: #ffffff;
+  cursor: pointer;
+}
 .nav-cart-bx{
   position: relative;
 }
+
 .cartIcon{
   width: 35px;
 }
@@ -66,7 +76,7 @@ li{
   z-index: 1000;
 }
 
-/* Tablet */
+/* Medium devices */
 @media (max-width: 890px) {
 .notification-nav {
     padding: 15px 80px;
@@ -117,13 +127,15 @@ li{
   }
 }
 
-
-/* Phones */
+/* Small devices */
 @media (max-width: 650px) {
 .notification-nav {
     padding: 15px 22px;
   }
   .header {
     padding: 16px 23px;
+  }
+  .logo-span{
+    display: none;
   }
 }

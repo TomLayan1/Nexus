@@ -11,16 +11,17 @@ const Header = () => {
   const [showMenu, setShowMenu] = useState(false)
 
   // FROM CCONTEXT
-    const { getTotalQuantity, notification } = useContext(StoreContext)
+    const { getTotalQuantity, notification, setNotification } = useContext(StoreContext)
 
   return (
     <>
     {notification && <div className='notification-nav'>
       <p className='notification'>Item successfully added!</p>
+      <FaTimes onClick={() => setNotification(false)} style={{ color: '#ffffff'}} />
     </div>}
     <header className='header' id='header'>
       <Link to={'/'} className='logo-bx'>
-        <h1 className='logo'><FaOpencart size={35} /> NEXUS</h1>
+        <h1 className='logo'><FaOpencart size={35} /> <span className='logo-span'>NEXUS</span></h1>
       </Link>
 
       <div className='nav-bx'>
@@ -36,8 +37,10 @@ const Header = () => {
           </ul>
         </nav>
       </div>
+      
 
       <div className='cart-ham-bx'>
+        <button className='login-btn'>Login</button>
         <div className='nav-icons-bx'>
           <Link to={'/cart'}><div className='nav-cart-bx'>
             <MdOutlineShoppingCart size={26} style={{color: '#1d4c29'}} />
