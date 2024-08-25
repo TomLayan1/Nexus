@@ -52,6 +52,8 @@ const StoreContextProvider = (props) => {
     const savedCart = localStorage.getItem('storeCart');
     return savedCart ? JSON.parse(savedCart) : []
   })
+  console.log(Object.keys(storeCart).length)
+
 
   useEffect(()=> {
     localStorage.setItem('storeCart', JSON.stringify(storeCart));
@@ -126,7 +128,7 @@ const StoreContextProvider = (props) => {
         itemPriceTotal += (itemPriceInfo.priceCents * storeCart[itemId].quantity) / 100;
       }
     }
-    return itemPriceTotal.toFixed(2);
+    return itemPriceTotal;
   }
 
   const getShippingTotalPrice = () => {
@@ -143,22 +145,22 @@ const StoreContextProvider = (props) => {
         }
       }
     }
-    return itemShippingTotal.toFixed(2);
+    return itemShippingTotal;
   };
 
   // PRICE WITHOUT SHIPPING
   const priceBeforeShipping = () => {
-    const totalItemPrice = getCartItemPrice();
-    const shippingTotal = getShippingTotalPrice();
-    const sum = Number(totalItemPrice) + Number(shippingTotal);
-    return sum.toFixed(2)
+    const totalItemPrice = Number(getCartItemPrice());
+    const shippingTotal = Number(getShippingTotalPrice());
+    const sum = totalItemPrice + shippingTotal;
+    return sum;
   }
 
   // ESTEMATED TAX
   const estimatedTax = () => {
-    const beforeShipping = priceBeforeShipping();
-    const tax = Number(priceBeforeShipping() * 0.1);
-    return tax.toFixed(2);
+    const taxNumber = Number(priceBeforeShipping());
+    const tax = taxNumber * 0.1
+    return tax;
   }
 
   // TOTAL PRICE
@@ -166,7 +168,7 @@ const StoreContextProvider = (props) => {
     const tax = estimatedTax();
     const beforeShipping = priceBeforeShipping();
     const totalPrice = Number(tax) + Number(beforeShipping);
-    return totalPrice.toFixed(2);
+    return totalPrice;
   }
 
   const contextValue = {

@@ -5,7 +5,7 @@
 }
 .about-img-bx{
   width: 55%;
-  background-image: url('../../Assets/Category/delivery.jpg');
+  background-image: url('../../Assets/Category/about-us.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -13,7 +13,7 @@
 .img-overlay{
   width: 100%;
   height: 100%;
-  background-color: #057a6173;
+  background-color: #057a6141;
   overflow: hidden;
 }
 .about-txt-bx{

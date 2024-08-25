@@ -11,10 +11,13 @@ const Cart = () => {
   const { notification, setNotification, getTotalQuantity } = useContext(StoreContext)
 
   const [showPayment, setShowPayment] = useState(false)
+
+
   return (
     <>
     {notification && <div className='notification-nav'>
       <p className='notification'>{notification}</p>
+      <FaTimes onClick={() => setNotification(false)} size={23} style={{ color: '#ffffff'}} />
     </div>}
     {showPayment && <div className='show-payment'></div>
 }

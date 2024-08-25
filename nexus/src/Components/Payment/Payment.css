@@ -24,6 +24,11 @@
   height: 85%;
   padding: 60px 30px;
 }
+.validation{
+  color: #750d0d;
+  font-size: 15px;
+  margin-bottom: 14px;
+}
 .payment-form{
   width: 100%;
 }
@@ -33,6 +38,7 @@
   border: 1px solid #ffffff;
   margin-bottom: 40px;
   border: 1px solid #1d4c29;
+  outline: none;
 }
 .amount-div{
   display: flex;

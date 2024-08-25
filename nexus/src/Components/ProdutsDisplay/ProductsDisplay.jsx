@@ -22,7 +22,7 @@ const ProductsDisplay = () => {
               </div>
               <div className='item-info-bx'>
                 <div className='price-rating-bx'>
-                  <p className='item-price'>${(item.priceCents / 100).toFixed(2)}</p>
+                  <p className='item-price'>₦{(item.priceCents / 100).toLocaleString()}</p>
                   <img className='item-rating' src={item.rating.stars} alt={item.rating.count} />
                 </div>
                 <p className='item-name'>{item.name}</p>

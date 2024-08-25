@@ -140,7 +140,7 @@ export const products = [
       stars: rating_45,
       count: 87
     },
-    priceCents: 1090,
+    priceCents: 1635000,
     category: [
       "socks",
       "sports",
@@ -155,7 +155,7 @@ export const products = [
       stars: rating_40,
       count: 127
     },
-    priceCents: 2095,
+    priceCents: 3142500,
     category: [
       "sports",
       "basketballs"
@@ -169,7 +169,7 @@ export const products = [
       stars: rating_45,
       count: 56
     },
-    priceCents: 799,
+    priceCents: 1198500,
     category: [
       "tshirts",
       "apparel",
@@ -186,7 +186,7 @@ export const products = [
       stars: rating_50,
       count: 2197
     },
-    priceCents: 1899,
+    priceCents: 2848500,
     category: [
       "toaster",
       "kitchen",
@@ -201,7 +201,7 @@ export const products = [
       stars: rating_40,
       count: 37
     },
-    priceCents: 2067,
+    priceCents: 3100500,
     category: [
       "plates",
       "kitchen",
@@ -216,7 +216,7 @@ export const products = [
       stars: rating_45,
       count: 317
     },
-    priceCents: 2400,
+    priceCents: 3600000,
     category: [
       "hoodies",
       "sweaters",
@@ -231,7 +231,7 @@ export const products = [
       stars: rating_45,
       count: 144
     },
-    priceCents: 3599,
+    priceCents: 5398500,
     category: [
       "bathroom",
       "washroom",
@@ -248,7 +248,7 @@ export const products = [
       stars: rating_45,
       count: 305
     },
-    priceCents: 2899,
+    priceCents: 4348500,
     category: [
       "bathroom",
       "cleaning"
@@ -262,7 +262,7 @@ export const products = [
       stars: rating_40,
       count: 89
     },
-    priceCents: 3390,
+    priceCents: 5085000,
     category: [
       "shoes",
       "running shoes",
@@ -277,7 +277,7 @@ export const products = [
       stars: rating_45,
       count: 235
     },
-    priceCents: 2070,
+    priceCents: 3105000,
     category: [
       "robe",
       "swimsuit",
@@ -297,7 +297,7 @@ export const products = [
       stars: rating_45,
       count: 30
     },
-    priceCents: 1560,
+    priceCents: 2340000,
     category: [
       "accessories",
       "shades"
@@ -311,7 +311,7 @@ export const products = [
       stars: rating_45,
       count: 562
     },
-    priceCents: 2499,
+    priceCents: 3748500,
     category: [
       "footwear",
       "sandals",
@@ -328,7 +328,7 @@ export const products = [
       stars: rating_40,
       count: 160
     },
-    priceCents: 1699,
+    priceCents: 2548500,
     category: [
       "shorts",
       "apparel",
@@ -343,7 +343,7 @@ export const products = [
       stars: rating_40,
       count: 99
     },
-    priceCents: 2374,
+    priceCents: 3561000,
     category: [
       "kleenex",
       "tissues",
@@ -360,7 +360,7 @@ export const products = [
       stars: rating_45,
       count: 2465
     },
-    priceCents: 1374,
+    priceCents: 3561000,
     category: [
       "hooded",
       "hoodies",
@@ -379,7 +379,7 @@ export const products = [
       stars: rating_45,
       count: 119
     },
-    priceCents: 1250,
+    priceCents: 1875000,
     category: [
       "bathmat",
       "bathroom",
@@ -410,7 +410,7 @@ export const products = [
       stars: rating_45,
       count: 2556
     },
-    priceCents: 1599,
+    priceCents: 3960000,
     category: [
       "tshirts",
       "shirts",
@@ -428,7 +428,7 @@ export const products = [
       stars: rating_45,
       count: 2286
     },
-    priceCents: 8300,
+    priceCents: 2398500,
     category: [
       "garbage",
       "bins",
@@ -444,7 +444,7 @@ export const products = [
       stars: rating_40,
       count: 456
     },
-    priceCents: 2399,
+    priceCents: 1035000,
     category: [
       "bedroom",
       "bed sheets",
@@ -461,7 +461,7 @@ export const products = [
       stars: rating_45,
       count: 9017
     },
-    priceCents: 2290,
+    priceCents: 1275000,
     category: [
       "pants",
       "apparel",
@@ -476,7 +476,7 @@ export const products = [
       stars: rating_40,
       count: 229
     },
-    priceCents: 3890,
+    priceCents: 5835000,
     category: [
       "shoes",
       "running shoes",
@@ -492,7 +492,7 @@ export const products = [
       stars: rating_35,
       count: 42
     },
-    priceCents: 1690,
+    priceCents: 5835000,
     category: [
       "sunglasses",
       "glasses",
@@ -508,7 +508,7 @@ export const products = [
       stars: rating_45,
       count: 130
     },
-    priceCents: 1649,
+    priceCents: 2473500,
     category: [
       "bathroom",
       "washroom",
@@ -524,7 +524,7 @@ export const products = [
       stars: rating_45,
       count: 248
     },
-    priceCents: 2400,
+    priceCents: 3600000,
     category: [
       "pants",
       "sweatpants",
@@ -541,7 +541,7 @@ export const products = [
       stars: rating_40,
       count: 126
     },
-    priceCents: 2899,
+    priceCents: 4348500,
     category: [
       "boxes",
       "food containers",
@@ -556,7 +556,7 @@ export const products = [
       stars: rating_45,
       count: 1211
     },
-    priceCents: 2250,
+    priceCents: 3375000,
     category: [
       "coffeemakers",
       "kitchen",
@@ -571,7 +571,7 @@ export const products = [
       stars: rating_45,
       count: 363
     },
-    priceCents: 3099,
+    priceCents: 4648500,
     category: [
       "bedroom",
       "home"
@@ -585,7 +585,7 @@ export const products = [
       stars: rating_40,
       count: 3
     },
-    priceCents: 10747,
+    priceCents: 16120500,
     category: [
       "food blenders",
       "kitchen",
@@ -600,7 +600,7 @@ export const products = [
       stars: rating_50,
       count: 679
     },
-    priceCents: 3899,
+    priceCents: 5848500,
     category: [
       "mixing bowls",
       "baking",
@@ -616,7 +616,7 @@ export const products = [
       stars: rating_45,
       count: 1045
     },
-    priceCents: 5799,
+    priceCents: 8698500,
     category: [
       "kitchen",
       "kitchen towels",
@@ -631,7 +631,7 @@ export const products = [
       stars: rating_45,
       count: 3157
     },
-    priceCents: 2400,
+    priceCents: 3600000,
     category: [
       "sweaters",
       "hoodies",

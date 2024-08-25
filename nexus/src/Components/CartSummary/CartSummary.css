@@ -2,6 +2,22 @@
   width: 60%;
   font-size: 15px;
 }
+.empty-cart-bx{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.empty-cart-txt{
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.empty-cart-btn{
+  cursor: pointer;
+  color: #1d4c29;
+}
 .main-item-bx{
   width: 100%;
   padding: 15px;

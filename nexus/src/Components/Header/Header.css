@@ -2,12 +2,12 @@
   width: 30%;
   background-color: #000000;
   position: fixed;
-  top: 65px;
+  top: 5px;
   right: 140px;
   display: flex;
   justify-content: space-between;
   padding: 16px 30px;
-  z-index: 400;
+  z-index: 600;
 }
 .notification{
   text-align: center;
