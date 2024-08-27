@@ -33,7 +33,7 @@
 /* Medium devices */
 @media (max-width: 890px) {
   .cart-bx{
-    padding: 100px 80px;
+    padding: 20px 80px;
   }
   .cart-info-bx{
     flex-direction: column;
@@ -43,7 +43,7 @@
 /* Small devices */
 @media (max-width: 650px) {
   .cart-bx{
-    padding: 100px 23px;
+    padding: 20px 23px;
   }
   .cart-header {
     margin-bottom: 10px;

@@ -29,7 +29,7 @@ const Cart = () => {
       <div className='cart-info-bx'>
         <CartSummary />
         <Checkout setShowPayment={setShowPayment} />
-        {showPayment && <Payment showPayment={showPayment} setShowPayment={setShowPayment} />}
+        <Payment showPayment={showPayment} setShowPayment={setShowPayment} />
       </div>
     </div>
     </>

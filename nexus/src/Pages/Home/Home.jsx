@@ -13,6 +13,7 @@ const Home = () => {
       <Hero />
       <div className='home-components'>
         <Category />
+        <hr />
         <ProductsDisplay />
       </div>
     </div>

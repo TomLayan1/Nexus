@@ -1,11 +1,11 @@
 .products-display-bx{
   width: 100%;
-  margin: 100px 0 60px 0;
+  padding: 100px 0;
 }
 .products-header {
   font-size: 30px;
   color: #1d4c29;
-  margin-bottom: 50px;
+  margin-bottom: 60px;
 }
 .products-bx{
   width: 100%;
@@ -48,7 +48,7 @@
   font-weight: 700;
 }
 .item-rating{
-  width: 90px;
+  width: 78px;
 }
 .item-name{
   font-size: 14px;

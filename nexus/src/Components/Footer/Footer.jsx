@@ -1,6 +1,7 @@
 import React from 'react';
 import './Footer.css';
-import { FaFacebook, FaYoutube, FaTwitter, FaInstagram } from "react-icons/fa";
+import { FaFacebook, FaYoutube, FaTwitter } from "react-icons/fa";
+import { RiInstagramFill } from "react-icons/ri";
 
 const Footer = () => {
   return (
@@ -14,19 +15,19 @@ const Footer = () => {
       </form>
       <div className='footer-menu'>
         <ul className='footer-ul'>
-          <li className='footer-li'>About</li>
+          <li className='footer-li'>ABOUT</li>
           <li className='footer-li'>FAQs</li>
-          <li className='footer-li'>News</li>
-          <li className='footer-li'>Contact Us</li>
+          <li className='footer-li'>NEWS</li>
+          <li className='footer-li'>CONTACT US</li>
         </ul>
       </div>
       <div className='footer-btm-bx'>
         <p className='small'>&#169; Copyright Tomisin 2024. All Right Reserved</p>
         <div className='footer-icon-bx'>
-          <a href='facebook'><FaFacebook size={20} style={{ color: '#af8c53' }} /></a>
-          <a href='youtube'><FaYoutube size={20} style={{ color: '#af8c53' }} /></a>
-          <a href='twitter'><FaTwitter size={20} style={{ color: '#af8c53' }} /></a>
-          <a href='instagram'><FaInstagram size={20} style={{ color: '#af8c53' }} /></a>
+          <a href='facebook' target='_blank'><FaFacebook size={20} style={{ color: '#1d4c29' }} /></a>
+          <a href='youtube' target='_blank'><FaYoutube size={20} style={{ color: '#1d4c29' }} /></a>
+          <a href='twitter' target='_blank'><FaTwitter size={20} style={{ color: '#1d4c29' }} /></a>
+          <a href='instagram' target='_blank'><RiInstagramFill size={20} style={{ color: '#1d4c29' }} /></a>
         </div>
       </div>
     </footer>

@@ -1,6 +1,6 @@
 .footer{
   width: 100%;
-  background-color: #1d4c29;
+  background-color: #90c79e;
   padding: 60px 0 8px 0;
 }
 form{
@@ -10,7 +10,7 @@ form{
 }
 .form-title{
   text-align: center;
-  color: #ffffff;
+  color: #1d4c29;
   margin-bottom: 20px;
 }
 .input-bx{
@@ -30,8 +30,8 @@ form{
 .form-btn{
   width: 33%;
   height: 38px;
-  border: 1px solid #af8c53;
-  background-color: #af8c53;
+  border: 1px solid #1d4c29;
+  background-color: #1d4c29;
   color: #ffffff;
   font-size: 15px;
   cursor: pointer;
@@ -47,7 +47,7 @@ form{
   width: 100%;
 }
 .footer-li{
-  color: #ffffff;
+  color: #1d4c29;
   font-size: 14px;
 }
 .footer-btm-bx{
@@ -64,7 +64,7 @@ form{
   justify-content: space-between;
 }
 .small{
-  color: #ffffff;
+  color: #1d4c29;
   font-size: 12px;
 }
 

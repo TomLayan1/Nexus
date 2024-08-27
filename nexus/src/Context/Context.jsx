@@ -6,10 +6,6 @@ import { deliveryOptions } from "../Assets/DeliveryDate";
 export const StoreContext = createContext(null);
 
 const StoreContextProvider = (props) => {
-
-  
-  // STATE FOR PRODUCTS
-  const [storeProducts, setStoreProducts] = useState(products);
  
   // STATE FOR CATEGORY
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -52,8 +48,6 @@ const StoreContextProvider = (props) => {
     const savedCart = localStorage.getItem('storeCart');
     return savedCart ? JSON.parse(savedCart) : []
   })
-  console.log(Object.keys(storeCart).length)
-
 
   useEffect(()=> {
     localStorage.setItem('storeCart', JSON.stringify(storeCart));
@@ -69,7 +63,6 @@ const StoreContextProvider = (props) => {
       setStoreCart(prev => ({...prev, [id]: {quantity: 1, deliveryOptionIndex: 0}}))
       setNotification('Item Added To Cart')
     }
-    console.log('confirm cart', storeCart )
   }
 
   // FUNCTION TO REDUCE QUANTITY
@@ -124,7 +117,7 @@ const StoreContextProvider = (props) => {
     let itemPriceTotal = 0
     for (const itemId in storeCart) {
       if (storeCart[itemId].quantity > 0) {
-        let itemPriceInfo = storeProducts.find(product => product.id === itemId);
+        let itemPriceInfo = products.find(product => product.id === itemId);
         itemPriceTotal += (itemPriceInfo.priceCents * storeCart[itemId].quantity) / 100;
       }
     }
@@ -174,7 +167,6 @@ const StoreContextProvider = (props) => {
   const contextValue = {
     selectedCategory,
     setSelectedCategory,
-    storeProducts,
     storeCart,
     notification,
     setNotification,
@@ -185,6 +177,7 @@ const StoreContextProvider = (props) => {
     increaseQuantity,
     deleteItem,
     selectDeliveryOption,
+    setSelectedDeliveryOption,
     getTotalQuantity,
     getCartItemPrice,
     getShippingTotalPrice,

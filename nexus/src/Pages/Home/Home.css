@@ -3,7 +3,7 @@
 }
 .home-components{
   width: 100%;
-  padding: 100px 140px;
+  padding: 0 140px;
   background-color: #f4f8f6;
   position: relative;
 }
@@ -11,13 +11,13 @@
 /* Tablet */
 @media (max-width: 890px) {
   .home-components {
-    padding: 100px 80px;
+    padding: 0 80px;
   }
 }
 
 /* Phones */
-@media (max-width: 480px) {
+@media (max-width: 650px) {
   .home-components {
-    padding: 100px 19px;
+    padding: 0 19px;
   }
 }

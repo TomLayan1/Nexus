@@ -4,11 +4,12 @@ import { StoreContext } from '../../Context/Context'
 import { deliveryOptions } from '../../Assets/DeliveryDate';
 import dayjs from 'dayjs'
 import { Link } from 'react-router-dom';
+import { products } from '../../Assets/Assets';
 
 const CartSummary = () => {
 
   // FROM CONTEXT
-  const {storeProducts, storeCart, reduceQuantity, increaseQuantity, deleteItem, selectDeliveryOption} = useContext(StoreContext);
+  const { storeCart, reduceQuantity, increaseQuantity, deleteItem, selectDeliveryOption} = useContext(StoreContext);
 
   return (
     <div className='cart-summary'>
@@ -19,7 +20,7 @@ const CartSummary = () => {
         </div>
       :
         (Object.entries(storeCart).map(([productId]) => {
-          const cartItem = storeProducts.find(product => product.id === productId);
+          const cartItem = products.find(product => product.id === productId);
           if (!cartItem) return null;
           return (
           <div key={cartItem.id} className='main-item-bx'>
