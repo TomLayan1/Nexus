@@ -2,21 +2,14 @@ import React, { useContext } from 'react'
 import './Category.css';
 import { categoryData } from '../../Assets/Assets'
 import { StoreContext } from '../../Context/Context';
-import { IoMan, IoWoman } from "react-icons/io5";
-import { FaHome } from "react-icons/fa";
-import { GiRunningShoe } from "react-icons/gi";
-import { FaKitchenSet } from "react-icons/fa6";
-import { MdOutlineSportsBasketball } from "react-icons/md";
-import { FcElectronics } from "react-icons/fc";
-import { GiClothes } from "react-icons/gi";
 
 const Category = () => {
 
   // FROM CONTEXT
-  const {filteredProduct, handleCategory, selectedCategory, setSelectedCategory, } = useContext(StoreContext)
+  const { handleCategory, selectedCategory, setSelectedCategory, } = useContext(StoreContext)
 
   return (
-    <section className='category-bx' id='category'>
+    <section className='category-section' id='category'>
       <div className='category-info-bx'>
         <h4 className='category-header'>Explore out category</h4>
         <p className='category-info'>Choose from our diverse category, featuring an array of great products. Our mission is to satisfy your need and elevate your shoppig experiemce, one product at a time.</p>

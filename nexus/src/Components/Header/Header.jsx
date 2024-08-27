@@ -4,6 +4,7 @@ import { FaBars, FaTimes, FaOpencart } from 'react-icons/fa';
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { Link } from 'react-router-dom';
 import { StoreContext } from '../../Context/Context';
+import Signup from '../Login/Signup';
 
 const Header = () => {
 
@@ -11,10 +12,14 @@ const Header = () => {
   const [showMenu, setShowMenu] = useState(false)
 
   // FROM CCONTEXT
-    const { getTotalQuantity, notification, setNotification } = useContext(StoreContext)
+  const { getTotalQuantity, notification, setNotification } = useContext(StoreContext)
+
+  // STATE TO SHOW SIGNUP FORM
+  const [showSignup, setShowSignup] = useState(false)
 
   return (
     <>
+    <Signup showSignup={showSignup} setShowSignup={setShowSignup} />
     {notification && <div className='notification-nav'>
       <p className='notification'>Item successfully added!</p>
       <FaTimes onClick={() => setNotification(false)} style={{ color: '#ffffff'}} />
@@ -40,7 +45,7 @@ const Header = () => {
       
 
       <div className='cart-ham-bx'>
-        <button className='login-btn'>Login</button>
+        <button onClick={()=>setShowSignup(true)} className='login-btn'>Sign Up</button>
         <div className='nav-icons-bx'>
           <Link to={'/cart'}><div className='nav-cart-bx'>
             <MdOutlineShoppingCart size={26} style={{color: '#1d4c29'}} />

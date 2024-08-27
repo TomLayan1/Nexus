@@ -1,4 +1,4 @@
-.category-bx{
+.category-section{
   width: 100%;
 }
 .category-info-bx{
@@ -19,7 +19,7 @@
   margin: auto;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 60px;
+  margin-bottom: 100px;
 }
 .option-bx{
   min-width: 90px;
