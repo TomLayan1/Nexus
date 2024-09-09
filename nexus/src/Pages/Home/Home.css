@@ -3,9 +3,21 @@
 }
 .home-components{
   width: 100%;
-  padding: 0 140px;
+  padding: 0 13%;
   background-color: #f4f8f6;
   position: relative;
+}
+
+@media (max-width: 1920px) {
+  .home-components {
+    /* padding: 0 12%; */
+  }
+}
+
+@media (max-width: 1728px) {
+  .home-components {
+    padding: 0 12%;
+  }
 }
 
 /* Tablet */

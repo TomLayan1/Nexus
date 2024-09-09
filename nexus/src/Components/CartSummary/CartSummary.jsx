@@ -9,24 +9,25 @@ import { products } from '../../Assets/Assets';
 const CartSummary = () => {
 
   // FROM CONTEXT
-  const { storeCart, reduceQuantity, increaseQuantity, deleteItem, selectDeliveryOption} = useContext(StoreContext);
+  const { shopCart, reduceQuantity, increaseQuantity, deleteItem, selectDeliveryOption} = useContext(StoreContext);
 
   return (
     <div className='cart-summary'>
-      {Object.keys(storeCart).length === 0 ?
+      {Object.keys(shopCart).length === 0 ?
         <div className='empty-cart-bx'>
           <p className='empty-cart-txt'>Cart is empty. Add item to Cart</p>
           <Link to={'/'}><p className='empty-cart-btn'>Add Item To Cart</p></Link> 
         </div>
       :
-        (Object.entries(storeCart).map(([productId]) => {
+        
+        (Object.entries(shopCart).map(([productId]) => {
           const cartItem = products.find(product => product.id === productId);
-          if (!cartItem) return null;
+          if (!cartItem) return null
           return (
           <div key={cartItem.id} className='main-item-bx'>
             <div className='cart-item-bx'>
               <div className='cart-item-details-bx'>
-                <p className='delivery-date-display'>Delivery date: {storeCart[cartItem.id].deliveryOptionIndex !== undefined && dayjs().add(deliveryOptions[storeCart[cartItem.id].deliveryOptionIndex].deliveryDays, 'days').format('dddd, MMMM D')}</p>
+                <p className='delivery-date-display'>Delivery date: {shopCart[cartItem.id].deliveryOptionIndex !== undefined && dayjs().add(deliveryOptions[shopCart[cartItem.id].deliveryOptionIndex].deliveryDays, 'days').format('dddd, MMMM D')}</p>
                 <div className='cart-items-first'>
                   <div className='cart-img-bx'>
                     <img className='cart-product-img' src={cartItem.image} alt={cartItem.name} />
@@ -36,7 +37,7 @@ const CartSummary = () => {
                     <p className='cart-product-price'>₦{(cartItem.priceCents / 100).toLocaleString()}</p>
                     <div className='cart-btn-bx'>
                       <button onClick={() => reduceQuantity(cartItem.id)} className='reduce-btn'>-</button>
-                      <p className='quantity'>{storeCart[cartItem.id].quantity}</p>
+                      <p className='quantity'>{shopCart[cartItem.id].quantity}</p>
                       <button onClick={() => increaseQuantity(cartItem.id)} className='increase-btn'>+</button>
                       <button onClick={() => deleteItem(cartItem.id)} className='delete-btn'>Delete</button>
                     </div>
@@ -55,7 +56,7 @@ const CartSummary = () => {
                       <input
                         type='radio'
                         name={cartItem.id}
-                        checked={storeCart[cartItem.id].deliveryOptionIndex === optionIndex}
+                        checked={shopCart[cartItem.id].deliveryOptionIndex === optionIndex}
                         onChange={()=> selectDeliveryOption(cartItem.id, optionIndex)}
                         className='shipping-option'/>
                       <div className='date-price-bx'>

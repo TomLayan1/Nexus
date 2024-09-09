@@ -27,31 +27,31 @@ const Header = () => {
         <h1 className='logo'><FaOpencart size={35} /> <span className='logo-span'>NEXUS</span></h1>
       </Link>
 
-      <div>
-        <div className='cart-ham-bx'>
+      {/* <div style={{ backgroundColor: 'blues' }}> */}
+        <div className='nav-cart-ham-bx'>
           <div className='nav-bx'>
             <nav className={`${showMenu ? '' : 'menu'}`}>
               <ul>
-                <Link to={'/'}  onClick={()=>setShowMenu(!showMenu)}><li>HOME</li></Link>
+                <Link to={'/'} onClick={()=>setShowMenu(!showMenu)}><li>HOME</li></Link>
                 <a onClick={()=>setShowMenu(!showMenu)} href='#category'><li>CATEGORY</li></a>
                 <a onClick={()=>setShowMenu(!showMenu)} href='#products'><li>PRODUCTS</li></a>
+                <Link to={'/orders'}  onClick={()=>setShowMenu(!showMenu)}><li>ORDERS</li></Link>
               </ul>
             </nav>
           </div>
           
+          <div className='cart-ham-bx'>
+              <Link to={'/cart'}><div className='nav-cart-bx'>
+                <MdOutlineShoppingCart size={26} style={{color: '#1d4c29'}} />
+                <p className='cart-quantity'>{getTotalQuantity()}</p>
+              </div></Link>
 
-          <div className='nav-icons-bx'>
-            <Link to={'/cart'}><div className='nav-cart-bx'>
-              <MdOutlineShoppingCart size={26} style={{color: '#1d4c29'}} />
-              <p className='cart-quantity'>{getTotalQuantity()}</p>
-            </div></Link>
-          </div>
-
-            <div className='ham-bx' onClick={()=>setShowMenu(!showMenu)}>
-              {showMenu ? <FaTimes size={23} style={{ color: '#1d4c29' }} /> : <FaBars size={23} style={{ color: '#1d4c29'}} /> }
-            </div>
+              <div className='ham-bx' onClick={()=>setShowMenu(!showMenu)}>
+                {showMenu ? <FaTimes size={23} style={{ color: '#1d4c29' }} /> : <FaBars size={23} style={{ color: '#1d4c29'}} /> }
+              </div>
           </div>
         </div>
+      {/* </div> */}
     </header>
     </>
   )

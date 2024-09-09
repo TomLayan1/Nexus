@@ -6,7 +6,7 @@ import { StoreContext } from '../../Context/Context'
 
 const Payment = ({ showPayment, setShowPayment }) => {
   // FROM CONTEXT
-  const { totalPrice } = useContext(StoreContext)
+  const { totalPrice, shopCart, setShopCart, setShoppingOrders, setNotification } = useContext(StoreContext)
 
   // STATE TO SHOW PAYMENT NOTIFICATION
   const [paymentNotification, setPaymentNotification] = useState(null);
@@ -44,19 +44,26 @@ const Payment = ({ showPayment, setShowPayment }) => {
 
     const paystack = new PaystackPop ();
     paystack.newTransaction({
-      key: 'pk_test_fc33ab46313be3d068d153d5a66fc5451d2c814c',
-      amount: paymentForm.amount * 100,
-      email: paymentForm.email,
-      firstname: paymentForm.firstName,
-      lastname: paymentForm.lastName,
-      onSuccess(transaction) {
-        let message = `Payment Complete! Reference ${transaction.reference}`;
-        alert(message);
-      },
-      onCancel(){
-        alert('Transaction Canceled!')
-      }
-    })
+    key: 'pk_test_fc33ab46313be3d068d153d5a66fc5451d2c814c',
+    amount: paymentForm.amount * 100,
+    email: paymentForm.email,
+    firstname: paymentForm.firstName,
+    lastname: paymentForm.lastName,
+    onSuccess(transaction) {
+      let message = `Payment Complete! Reference ${transaction.reference}`;
+      alert(message);
+
+      // Clear the cart after payment is successful
+      setShopCart({});
+      setNotification('Cart has been emptied. Check orders');
+
+      // Move cart items to orders
+      setShoppingOrders(order => [...order, ...Object.entries(shopCart)]);
+    },
+    onCancel(){
+      alert('Transaction Canceled!')
+    }
+  });
 
     setPaymentForm({
       email: '',

@@ -1,6 +1,6 @@
 .category-section{
   width: 100%;
-  padding: 100px 0;
+  padding: 70px 0;
 }
 .category-info-bx{
   width: 60%;
@@ -38,7 +38,7 @@
   align-items: center;
   justify-content: center;
   color: #1d4c29;
-  font-size: 30px;
+  /* font-size: 25px; */
   font-weight: bold;
 }
 .option-name{

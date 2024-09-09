@@ -16,7 +16,7 @@
 .header{
   width: 100%;
   background-color: #90c79e;
-  padding: 24px 140px;
+  padding: 34px 13%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -32,7 +32,7 @@
   position: relative;
 }
 nav{
-  width: 330px;
+  width: 500px;
 }
 ul{
   display: flex;
@@ -42,23 +42,20 @@ li{
   list-style: none;
   color: #1d4c29;
 }
-.cart-ham-bx{
+.nav-cart-ham-bx{
+  width: 60%;
   display: flex;
   align-items: center;
-  gap: 20px;
+  justify-content: space-between;
+  
 }
-.login-btn{
-  width: 65px;
-  padding: 8px 1px;
-  border: none;
-  background-color: #1d4c29;
-  color: #ffffff;
-  cursor: pointer;
+.cart-ham-bx{
+  display: flex;
+  gap: 35px;
 }
 .nav-cart-bx{
   position: relative;
 }
-
 .cartIcon{
   width: 35px;
 }
@@ -67,7 +64,7 @@ li{
   top: -17px;
   right: -4px;
   color: #ffffff;
-  font-size: 15px;
+  font-size: 10px;
   background-color: #69692e;
   border-radius: 50%;
   padding: 2px 6px;
@@ -77,13 +74,22 @@ li{
   z-index: 1000;
 }
 
+@media (max-width: 1728px) {
+  .header {
+    padding: 24px 11%;
+  }
+  .nav-cart-ham-bx {
+    width: 66%;
+  }
+}
+
 /* Medium devices */
 @media (max-width: 890px) {
 .notification-nav {
     padding: 15px 80px;
   }
   .header {
-    padding: 24px 80px;
+    padding: 24px 40px;
   }
   .logo{
     font-size: 22px;

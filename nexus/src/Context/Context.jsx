@@ -44,30 +44,47 @@ const StoreContextProvider = (props) => {
   }, [notification])
 
   // STATE FOR CART
-  const [storeCart, setStoreCart] = useState(() => {
-    const savedCart = localStorage.getItem('storeCart');
-    return savedCart ? JSON.parse(savedCart) : []
-  })
+  const [shopCart, setShopCart] = useState(()=>{
+    const savedShopCart = localStorage.getItem('shopCart')
+    return savedShopCart ? JSON.parse(savedShopCart) : []
+  });
 
-  useEffect(()=> {
-    localStorage.setItem('storeCart', JSON.stringify(storeCart));
-  }, [storeCart])
+  useEffect(()=>{
+    localStorage.setItem('shopCart', JSON.stringify(shopCart))
+  }, [shopCart])
+
+
+
+  // STATE FOR CART
+  const [shoppingOrders, setShoppingOrders] = useState(() => {
+    const savedOrders = localStorage.getItem('shoppingOrders');
+    return savedOrders ? JSON.parse(savedOrders) : [];
+  });
+
+  console.log(shoppingOrders)
+
+  // SAVE ORDERS IN LOCALSTORAGE
+  useEffect(() => {
+    localStorage.setItem('shoppingOrders', JSON.stringify(shoppingOrders));
+  }, [shoppingOrders])
 
 
   // FUNCTION TO ADD PRODUCT TO CART
   const addToCart = (id) => {
-    if (storeCart[id]) {
-      setStoreCart(prev => ({...prev, [id]: {quantity: prev[id].quantity + 1}}));
+    if (shopCart[id]) {
+      setShopCart(prev => (
+        {...prev, [id]: {quantity: prev[id].quantity + 1}}
+      ));
       setNotification('Item Added To Cart')
     } else {
-      setStoreCart(prev => ({...prev, [id]: {quantity: 1, deliveryOptionIndex: 0}}))
+      setShopCart(prev => ({...prev, [id]: {quantity: 1, deliveryOptionIndex: 0}}))
       setNotification('Item Added To Cart')
     }
   }
 
   // FUNCTION TO REDUCE QUANTITY
   const reduceQuantity = (id) => {
-    setStoreCart(prev => {
+    setShopCart(prev => {
       // Declare a variable that is equal to the item's id
       const currentProduct = prev[id];
       // Check if the quantity is greater than one
@@ -79,7 +96,7 @@ const StoreContextProvider = (props) => {
 
   // FUNCTION TO INCREASE QUANTITY
   const increaseQuantity = (id) => {
-    setStoreCart(prev => {
+    setShopCart(prev => {
       // Declare a variable that is equal to the item's id
       const currentProduct = prev[id];
       // Check if the quantity is less than 10
@@ -91,7 +108,7 @@ const StoreContextProvider = (props) => {
 
   // FUNCTION TO DELETE ITEM FROM CART
   const deleteItem = (id) => {
-    setStoreCart(prev => {
+    setShopCart(prev => {
       // Destructure to exclude item with the specified id
       const {[id]: _, ...rest} = prev;
       return rest;
@@ -101,24 +118,24 @@ const StoreContextProvider = (props) => {
 
   // FUNCTION TO SELECT DELIVERY OPTION
   const selectDeliveryOption = (id, optionIndex) => {
-    setStoreCart(prev => {
+    setShopCart(prev => {
       return ({...prev, [id]: {...prev[id], deliveryOptionIndex: optionIndex}})
     })
   }
 
   // FUNCTION TO CALCULATE TOTAL QUANTITY OF CART ITEMS
   const getTotalQuantity = () => {
-    return Object.values(storeCart).reduce((total, storeCart) => total + storeCart.quantity, 0);
+    return Object.values(shopCart).reduce((total, shopCart) => total + shopCart.quantity, 0);
   };
 
    // PAYMENT SUMMARY
   // Function to calculate total amount of items in the cart
   const getCartItemPrice = () => {
     let itemPriceTotal = 0
-    for (const itemId in storeCart) {
-      if (storeCart[itemId].quantity > 0) {
+    for (const itemId in shopCart) {
+      if (shopCart[itemId].quantity > 0) {
         let itemPriceInfo = products.find(product => product.id === itemId);
-        itemPriceTotal += (itemPriceInfo.priceCents * storeCart[itemId].quantity) / 100;
+        itemPriceTotal += (itemPriceInfo.priceCents * shopCart[itemId].quantity) / 100;
       }
     }
     return itemPriceTotal;
@@ -126,8 +143,8 @@ const StoreContextProvider = (props) => {
 
   const getShippingTotalPrice = () => {
     let itemShippingTotal = 0;
-    for (const itemId in storeCart) {
-      const cartItem = storeCart[itemId];
+    for (const itemId in shopCart) {
+      const cartItem = shopCart[itemId];
       if (cartItem.quantity > 0) {
         const shippingOptionIndex = selectedDeliveryOption[itemId] !== undefined ? selectedDeliveryOption[itemId] : cartItem.deliveryOptionIndex;
         if (shippingOptionIndex >= 0 && shippingOptionIndex < deliveryOptions.length) {
@@ -167,7 +184,10 @@ const StoreContextProvider = (props) => {
   const contextValue = {
     selectedCategory,
     setSelectedCategory,
-    storeCart,
+    shopCart,
+    setShopCart,
+    shoppingOrders,
+    setShoppingOrders,
     notification,
     setNotification,
     filteredProduct,

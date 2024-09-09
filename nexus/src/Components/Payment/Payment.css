@@ -7,7 +7,7 @@
   width: 36%;
   z-index: 1000;
   padding: 60px 40px;
-  transition:  2s;
+  transition:  .5s;
 }
 .showPayment{
   transform: translateX(0%);
@@ -62,6 +62,7 @@
   border: none;
   width: 100%;
   padding: 16px 0;
+  cursor: pointer;
 }
 
 @media (max-width: 890px) {
